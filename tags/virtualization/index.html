@@ -157,12 +157,12 @@ body{ -webkit-animation: bugfix infinite 1s; }
 </li>
 </ul>
 </li>
-<li><p>The authors present vTurbo, a system that offload I/O processing for VMs to a designated core with small scheduling time-slice.  It enables us to reduce both VM scheduling latency and low I/O IRQ latency.</p>
+<li><p>The authors present vTurbo, a system that offloads I/O processing for VMs to a designated core with small scheduling time-slice.  It enables us to reduce both VM scheduling latency and low I/O IRQ latency.</p>
 </li>
 <li>This system divides CPU cores into regular cores (normal CPU time-slice, e.g., 30ms) and turbo cores (small CPU time-slice, e.g., 0.1ms).  I/O processing for VMs is assigned to one or more turbo core(s).  A turbo vCPU of each VM is pinned to the corresponding turbo core.</li>
 <li>The prototype is implemented based on Xen 4.1.2.</li>
-<li>Their previous work, vSnoop [SC2010] improves TCP performance by offloading ACK processing from a guest OS to the hypervisor.  Such a hypervisor intervention is similar to this work.</li>
-<li>The problem statement is similar to <a href="/2014/12/01/Ef%EF%AC%81cient-and-Scalable-Paravirtual-I-O-System/">ELVIS</a> [USENIX2013]), but ELVIS uses polling instead of thread scheduling.</li>
+<li>For improving TCP performance, it uses a technique similar to their previous work, vSnoop [SC2010] that offloads ACK processing from a guest OS to the hypervisor.  Such a hypervisor intervention is similar to this work.</li>
+<li>The problem statement is similar to <a href="/2014/12/01/Ef%EF%AC%81cient-and-Scalable-Paravirtual-I-O-System/">ELVIS</a> [USENIX2013], but ELVIS uses polling instead of thread scheduling.</li>
 </ul>
 
           

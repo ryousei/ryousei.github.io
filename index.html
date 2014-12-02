@@ -153,12 +153,12 @@ body{ -webkit-animation: bugfix infinite 1s; }
 </li>
 </ul>
 </li>
-<li><p>The authors present vTurbo, a system that offload I/O processing for VMs to a designated core with small scheduling time-slice.  It enables us to reduce both VM scheduling latency and low I/O IRQ latency.</p>
+<li><p>The authors present vTurbo, a system that offloads I/O processing for VMs to a designated core with small scheduling time-slice.  It enables us to reduce both VM scheduling latency and low I/O IRQ latency.</p>
 </li>
 <li>This system divides CPU cores into regular cores (normal CPU time-slice, e.g., 30ms) and turbo cores (small CPU time-slice, e.g., 0.1ms).  I/O processing for VMs is assigned to one or more turbo core(s).  A turbo vCPU of each VM is pinned to the corresponding turbo core.</li>
 <li>The prototype is implemented based on Xen 4.1.2.</li>
-<li>Their previous work, vSnoop [SC2010] improves TCP performance by offloading ACK processing from a guest OS to the hypervisor.  Such a hypervisor intervention is similar to this work.</li>
-<li>The problem statement is similar to <a href="/2014/12/01/Ef%EF%AC%81cient-and-Scalable-Paravirtual-I-O-System/">ELVIS</a> [USENIX2013]), but ELVIS uses polling instead of thread scheduling.</li>
+<li>For improving TCP performance, it uses a technique similar to their previous work, vSnoop [SC2010] that offloads ACK processing from a guest OS to the hypervisor.  Such a hypervisor intervention is similar to this work.</li>
+<li>The problem statement is similar to <a href="/2014/12/01/Ef%EF%AC%81cient-and-Scalable-Paravirtual-I-O-System/">ELVIS</a> [USENIX2013], but ELVIS uses polling instead of thread scheduling.</li>
 </ul>
 
           
@@ -337,7 +337,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
-<li><p>XvMotion: Uniﬁed Virtual Machine Migration over Long Distance</p>
+<li><p>XvMotion: Unified Virtual Machine Migration over Long Distance</p>
 <ul>
 <li>Authors: Ali José Mashtizadeh, Stanford University; Min Cai, Gabriel Tarasuk-Levin, and Ricardo Koller, VMware, Inc.; Tal Garfinkel; Sreekanth Setty, VMware, Inc.</li>
 <li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/mashtizadeh" target="_blank" rel="external">URL</a>]</li>
@@ -353,6 +353,12 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <ul>
 <li>Authors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware</li>
 <li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/agesen" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>vBalance: Using Interrupt Load Balance to Improve I/O Performance for SMP Virtual Machines</p>
+<ul>
+<li>Authors:     Luwei Cheng    and Cho-Li Wang, The University of Hong Kong</li>
+<li>2012 ACM SoCC</li>
 </ul>
 </li>
 </ol>
