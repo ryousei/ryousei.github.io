@@ -5,15 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Efficient and Scalable Paravirtual I/O System | My Reading List</title>
+  <title>Hyper-Switch: A Scalable Software Virtual Switching Architecture | My Reading List</title>
   <meta name="author" content="Ryousei Takano">
   
-  <meta name="description" content="Title: Efficient and Scalable Paravirtual I/O SystemAuthors: Nadav Har’El, Abel Gordon, and Alex Landau, IBM Research–Haifa; Muli Ben-Yehuda, Technion">
+  <meta name="description" content="Title: Hyper-Switch: A Scalable Software Virtual Switching ArchitectureAuthors: Kaushik Kumar Ram, Alan L. Cox, Mehul Chadha, and Scott Rixner, Rice U">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Efficient and Scalable Paravirtual I/O System"/>
+  <meta property="og:title" content="Hyper-Switch: A Scalable Software Virtual Switching Architecture"/>
   <meta property="og:site_name" content="My Reading List"/>
 
   
@@ -99,11 +99,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
   	<div class="inner">
       <div class="padding">
     		
-          <h1>Efficient and Scalable Paravirtual I/O System</h1>
+          <h1>Hyper-Switch: A Scalable Software Virtual Switching Architecture</h1>
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-01T09:21:04.000Z">Dec 1 2014</time>
+              <time datetime="2014-12-02T21:41:23.000Z">Dec 3 2014</time>
             </li>
             
               <li>
@@ -133,24 +133,13 @@ body{ -webkit-animation: bugfix infinite 1s; }
       
       <div class="entry">
         
-          <p>Title: Efficient and Scalable Paravirtual I/O System<br>Authors: Nadav Har’El, Abel Gordon, and Alex Landau, IBM Research–Haifa; Muli Ben-Yehuda, Technion IIT and Hypervisor Consulting; Avishay Traeger and Razya Ladelsky, IBM Research–Haifa<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/har%E2%80%99el" target="_blank" rel="external">URL</a>]<br>Reference:</p>
-<ul>
-<li><a href="https://github.com/abelg/virtual_io_acceleration/wiki/Virtual-I-O-acceleration-technologies-for-KVM" target="_blank" rel="external">Virtual I O acceleration technologies for KVM</a> (Abel Gorden@github)</li>
-</ul>
+          <p>Title: Hyper-Switch: A Scalable Software Virtual Switching Architecture<br>Authors: Kaushik Kumar Ram, Alan L. Cox, Mehul Chadha, and Scott Rixner, Rice University<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/ram" target="_blank" rel="external">URL</a>]</p>
 <hr>
 <ul>
-<li>The authors proposes a novel para-virtual I/O mechanism, <em>ELVIS (Efficient and scaLable paraVirtual I/O System)</em>.<ul>
-<li>Fine-grained I/O scheduling (instead of thread-based I/O scheduling): a single I/O thread runs on a dedicated I/O core, and handles I/O requests of multiple VMs.</li>
-<li>Exitless I/O request notification: polling in host’s I/O core</li>
-<li>Exitless I/O reply notification: using ELI</li>
-</ul>
-</li>
-<li>They implemented ELVIS in KVM/vhost, and demonstrated the performance of I/O intensive applications comparing to the unmodified KVM with vhost and SR-IOV+ELI.</li>
-<li><em>ELI (Exit-Less Interruption)</em> is their previous work [ASPLOS2012], and improves interrupt virtualization efficiency.  In this paper, they emulate <em>posted interrupts</em>, which is a new feature announced for future x86 processors, by using ELI.<ul>
-<li><a href="http://events.linuxfoundation.org/sites/events/files/slides/VT-d%20Posted%20Interrupts-final%20.pdf" target="_blank" rel="external">VT-d Posted Interrupts</a></li>
-<li><a href="http://lwn.net/Articles/619691/" target="_blank" rel="external">Add VT-d Posted-Interrupts support for KVM</a> (LWN)</li>
-</ul>
-</li>
+<li>This paper presents <em>Hyper-Switch</em>, a efficient and scalable software-based switch, and several optimization techniques, including preemptive packet copying, batching hypervisor entries, and offloading packet processing.</li>
+<li>Benson et al. reports that 80% of the traffic originating at servers in cloud data centers never leaves the rack [IMC2010].  Also the number of CPU cores in a server will grow continuously.  This implies that the role of vSwich becomes much more critical.  Hyper-Switch focuses on the performance problem of the last hop in a virtualized data center.</li>
+<li>The prototype is implemented based on Open vSwitch under the Xen 4.2 platform.  The authors have ported essential parts of Open vSwitch’s datapath (from the driver domain) to the Xen hypervisor.</li>
+<li>The experimental results show the advantage over unmodified Xen and KVM with vhost-net.</li>
 </ul>
 
         
@@ -192,18 +181,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
- <div class="article-prev" >
- <a href="/2014/12/02/vTurbo-Accelerating-Virtual-Machine-I-O-Processing-Using-Designated-Turbo-Sliced-Core/" title="vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core">
-  <i class="fa fa-long-arrow-left"></i>
-  <span>
-  vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core</span>
-</a>
-</div>
-
 
 <div class="article-next">
-<a href="/2014/11/30/TODO-list/"  title="TODO list">
- <span>TODO list
+<a href="/2014/12/02/vTurbo-Accelerating-Virtual-Machine-I-O-Processing-Using-Designated-Turbo-Sliced-Core/"  title="vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core">
+ <span>vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core
 </span>
 <i class="fa fa-long-arrow-right"></i>
 </a>
