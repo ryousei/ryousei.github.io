@@ -5,15 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | My Reading List</title>
+  <title>OSv - Optimizing the Operating System for Virtual Machines | My Reading List</title>
   <meta name="author" content="Ryousei Takano">
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+  <meta name="description" content="Title: OSv - Optimizing the Operating System for Virtual MachinesAuthors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Hello World"/>
+  <meta property="og:title" content="OSv - Optimizing the Operating System for Virtual Machines"/>
   <meta property="og:site_name" content="My Reading List"/>
 
   
@@ -99,11 +99,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
   	<div class="inner">
       <div class="padding">
     		
-          <h1>Hello World</h1>
+          <h1>OSv - Optimizing the Operating System for Virtual Machines</h1>
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2014-11-30T12:58:29.000Z">Nov 30 2014</time>
+              <time datetime="2014-12-04T06:03:15.000Z">Dec 4 2014</time>
             </li>
             
               <li>
@@ -133,24 +133,24 @@ body{ -webkit-animation: bugfix infinite 1s; }
       
       <div class="entry">
         
-          <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+          <p>Title: OSv - Optimizing the Operating System for Virtual Machines<br>Authors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, and Vlad Zolotarov, Cloudius Systems<br>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]<br>Reference:</p>
+<ul>
+<li><a href="http://osv.io/" target="_blank" rel="external">OSv - the operating system designed for the cloud</a></li>
+</ul>
+<hr>
+<ul>
+<li>The authors present OSv, a new guest operating system designed specifically for running a single application on a virtual machine in the cloud.  The first author is famous as the father of the KVM hypervisor and a founder at Cloudius Systems.</li>
+<li>OSv follows the library OS design, proposed by <em>exokernel</em> in 1990s.  In OSv case, a hyperviosr replaces the role of exokernel.</li>
+<li>OSv has been developed from scratch.  The code is written in C++11.<ul>
+<li>Single address space: all application thread and kernel use the same page tables.</li>
+<li>No spinlocks.</li>
+<li>Thread scheduler: lock-free, preemptive, tick-less, fair, scalable, and efficient</li>
+<li>Network channels: employ Van Jacobson’s net channel idea to reduce contentions between an application thread context and an interrupt context.</li>
+<li>Beyond Linux API: shrinker, JVM balloon</li>
+</ul>
+</li>
+<li>It originally supports only Java applications, and now applications written in Lua, Ruby, and so on, run on OSv.  Some guest OSs focus on running only a single high-level language. For example, Erlang on Xen, Mirage OS (OCaml), and Libra (J9 JVM).</li>
+</ul>
 
         
       </div>
@@ -158,6 +158,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
         
           
           
+  
+  <div class="tags">
+    <a href="/tags/virtualization/">virtualization</a>
+  </div>
+
           <div class="share">
   
 
@@ -186,14 +191,14 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
- <div class="article-prev" >
- <a href="/2014/11/30/TODO-list/" title="TODO list">
-  <i class="fa fa-long-arrow-left"></i>
-  <span>
-  TODO list</span>
+
+<div class="article-next">
+<a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/"  title="Hyper-Switch: A Scalable Software Virtual Switching Architecture">
+ <span>Hyper-Switch: A Scalable Software Virtual Switching Architecture
+</span>
+<i class="fa fa-long-arrow-right"></i>
 </a>
 </div>
-
 
 </nav>
 

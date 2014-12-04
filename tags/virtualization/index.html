@@ -118,6 +118,79 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-04T06:03:15.000Z">Dec 4 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: OSv - Optimizing the Operating System for Virtual Machines<br>Authors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, and Vlad Zolotarov, Cloudius Systems<br>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]<br>Reference:</p>
+<ul>
+<li><a href="http://osv.io/" target="_blank" rel="external">OSv - the operating system designed for the cloud</a></li>
+</ul>
+<hr>
+<ul>
+<li>The authors present OSv, a new guest operating system designed specifically for running a single application on a virtual machine in the cloud.  The first author is famous as the father of the KVM hypervisor and a founder at Cloudius Systems.</li>
+<li>OSv follows the library OS design, proposed by <em>exokernel</em> in 1990s.  In OSv case, a hyperviosr replaces the role of exokernel.</li>
+<li>OSv has been developed from scratch.  The code is written in C++11.<ul>
+<li>Single address space: all application thread and kernel use the same page tables.</li>
+<li>No spinlocks.</li>
+<li>Thread scheduler: lock-free, preemptive, tick-less, fair, scalable, and efficient</li>
+<li>Network channels: employ Van Jacobson’s net channel idea to reduce contentions between an application thread context and an interrupt context.</li>
+<li>Beyond Linux API: shrinker, JVM balloon</li>
+</ul>
+</li>
+<li>It originally supports only Java applications, and now applications written in Lua, Ruby, and so on, run on OSv.  Some guest OSs focus on running only a single high-level language. For example, Erlang on Xen, Mirage OS (OCaml), and Libra (J9 JVM).</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/">Hyper-Switch: A Scalable Software Virtual Switching Architecture</a></h1>
     
   
@@ -149,7 +222,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <hr>
 <ul>
 <li>This paper presents <em>Hyper-Switch</em>, a efficient and scalable software-based switch, and several optimization techniques, including preemptive packet copying, batching hypervisor entries, and offloading packet processing.</li>
-<li>Benson et al. reports that 80% of the traffic originating at servers in cloud data centers never leaves the rack [IMC2010].  Also the number of CPU cores in a server will grow continuously.  This implies that the role of vSwich becomes much more critical.  Hyper-Switch focuses on the performance problem of the last hop in a virtualized data center.</li>
+<li>Benson et al. reports that 80% of the traffic originating at servers in cloud data centers never leaves the rack [IMC2010].  Also the number of CPU cores in a server will grow continuously.  These implies that the role of vSwich becomes much more critical.  Hyper-Switch focuses on the performance problem of the last hop in a virtualized data center.</li>
 <li>The prototype is implemented based on Open vSwitch under the Xen 4.2 platform.  The authors have ported essential parts of Open vSwitch’s datapath (from the driver domain) to the Xen hypervisor.</li>
 <li>The experimental results show the advantage over unmodified Xen and KVM with vhost-net.</li>
 </ul>
@@ -341,6 +414,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/">Hyper-Switch: A Scalable Software Virtual Switching Architecture</a>
       </li>
     
@@ -356,10 +433,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
         <a href="/2014/11/30/TODO-list/">TODO list</a>
       </li>
     
-      <li>
-        <a href="/2014/11/30/hello-world/">Hello World</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -370,7 +443,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <div class="widget tag">
   <h3 class="title">Tags</h3>
   
-    <a href="/tags/virtualization/">virtualization<small>3</small></a>
+    <a href="/tags/virtualization/">virtualization<small>4</small></a>
   
 </div>
 
