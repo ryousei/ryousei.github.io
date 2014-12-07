@@ -141,7 +141,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <ul>
 <li>The authors presents <em>mTCP</em>, a highly scalable user-level TCP stack for multicore systems.</li>
 <li>Large flows are easy to fill up 10 Gbps. But, small flows are hard to fill up 10 Gbps regardless of the number of CPU cores.  This is because the Linux kernel is not designed for multicore systems.  In a web server case, 83% of CPU usage spent inside kernel.</li>
-<li>Several proposals for improving in-kernel TCP performance, including <em>affinity accept</em> [EuroSys2012], <em>MegaPipe</em> [OSDI2012], and <em>FlexSC</em> [OSDI2010], however, they are not sufficient.</li>
+<li>Several proposals for improving in-kernel TCP performance, including <em>affinity accept</em> [EuroSys2012], <em>MegaPipe</em> [OSDI2012], and <em>FlexSC</em> [OSDI2010], however, they are not sufficient.  As another approach, mTCP, <em>SolarFlare <a href="http://www.openonload.org/" target="_blank" rel="external">OpenOnload</a></em> and <em>Sandstorm</em> [SIGCOMM2014] run the entire network stack in the userspace to eliminate kernel crossing overheads and optimize packet processing without kernel modifications.</li>
 <li>mTCP makes full use of extreme parallelism and batch processing:<ul>
 <li>Per-core resource management (listening queue, file descriptor, packet queue)</li>
 <li>Lock-free data structures and cache-aware threading</li>
@@ -150,7 +150,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li>Easily portable APIs for compatibility (similar to BSD socket API)</li>
 </ul>
 </li>
-<li>This group has proposed <em>PacketShader</em>, GPU-accelerated software router in the ACM SIGCOMM 2010.  As a part of mTCP (user-level pacekt I/O library), they extend PacketShader I/O engine (PSIO) to support an efficient event-driven packet I/O interface.  Other user-level packet I/O engines have been proposed, including <em>Intel DPDK</em> and <em>netmap</em> [USENIX2012].</li>
+<li>This group has proposed <em>PacketShader</em>, GPU-accelerated software router in the ACM SIGCOMM 2010.  As a part of mTCP (user-level pacekt I/O library), they extend PacketShader I/O engine (PSIO) to support an efficient event-driven packet I/O interface.  Other user-level packet I/O engines have been proposed, including <em>Intel DPDK</em> and <em><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap</a></em> [USENIX2012].</li>
 <li>The source code is available from <a href="https://github.com/eunyoung14/mtcp" target="_blank" rel="external">eunyoung14@github</a>.</li>
 </ul>
 
@@ -193,6 +193,14 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
+ <div class="article-prev" >
+ <a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/" title="netmap: a novel framework for fast packet I/O">
+  <i class="fa fa-long-arrow-left"></i>
+  <span>
+  netmap: a novel framework for fast packet I/O</span>
+</a>
+</div>
+
 
 <div class="article-next">
 <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/"  title="OSv - Optimizing the Operating System for Virtual Machines">
@@ -233,6 +241,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap: a novel framework for fast packet I/O</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</a>
       </li>
     
@@ -248,10 +260,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
         <a href="/2014/12/02/vTurbo-Accelerating-Virtual-Machine-I-O-Processing-Using-Designated-Turbo-Sliced-Core/">vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core</a>
       </li>
     
-      <li>
-        <a href="/2014/12/01/Efﬁcient-and-Scalable-Paravirtual-I-O-System/">Efficient and Scalable Paravirtual I/O System</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -264,7 +272,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/kernel/">kernel<small>1</small></a>
   
-    <a href="/tags/networking/">networking<small>1</small></a>
+    <a href="/tags/networking/">networking<small>2</small></a>
   
     <a href="/tags/virtualization/">virtualization<small>4</small></a>
   
