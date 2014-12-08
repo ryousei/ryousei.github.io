@@ -118,6 +118,69 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-08T00:24:04.000Z">Dec 8 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: ClickOS and the Art of Network Function Virtualization<br>Authors: Joao Martins and Mohamed Ahmed, NEC Europe Ltd.; Costin Raiciu and Vladimir Olteanu, University Politehnica of Bucharest; Michio Honda, Roberto Bifulco, and Felipe Huici, NEC Europe Ltd.<br>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors presents <em>ClickOS</em>, a high-performance, virtualize software middlebox platform.</li>
+<li>To support fast and easily programmable middlebox platform, ClickOS implements a minimalistic guest OS that is organized to run <em><a href="http://www.read.cs.ucla.edu/click/" target="_blank" rel="external">Click</a></em>, a software modular router, at rates of millions of packets per second.  It is built on top of MiniOS in the Xen hypervisor.  As a software switch, the authors employ the <em>VALE</em> switch [CoNEXT2012] instead of Open vSwitch.  They modified the Xen netback driver to implement the netmap API.</li>
+<li>To demonstrate the feasibility, the authors test the following middlebox applications: Wire, EtherMonitor, IP Router, Firewall, Carrier Grade NAT, Software Broadband Remote Access Server, Intrusion Detection System, Load Balancer, and Flow Monitor.</li>
+<li>The source code is available from <a href="https://github.com/cnplab/clickos/" target="_blank" rel="external">cnplab@github</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/07/Speeding-up-packet-I-O-in-virtual-machines/">Speeding up packet I/O in virtual machines</a></h1>
     
   
@@ -156,7 +219,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li>send combination [USENIX2002]: a driver-based form of batching and interrupt moderation</li>
 </ul>
 </li>
-<li>They focus on high packet rates instead of high throughput on virtualized networks.  That enables a new set of applications, including software routers, IDS, monitors, and so on, within virtual machines.</li>
+<li>They focus on high packet rates instead of high throughput on virtualized networks.  That enables a new set of applications, including software routers, middlebox, SDN, and so on, within virtual machines.</li>
 <li>They also use <em>VALE</em> [CoNEXT2012] as a virtual switch.</li>
 </ul>
 
@@ -635,6 +698,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/07/Speeding-up-packet-I-O-in-virtual-machines/">Speeding up packet I/O in virtual machines</a>
       </li>
     
@@ -650,10 +717,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
         <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a>
       </li>
     
-      <li>
-        <a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/">Hyper-Switch: A Scalable Software Virtual Switching Architecture</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -666,9 +729,9 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/kernel/">kernel<small>1</small></a>
   
-    <a href="/tags/networking/">networking<small>3</small></a>
+    <a href="/tags/networking/">networking<small>4</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>5</small></a>
+    <a href="/tags/virtualization/">virtualization<small>6</small></a>
   
 </div>
 
