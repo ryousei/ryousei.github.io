@@ -141,11 +141,14 @@ body{ -webkit-animation: bugfix infinite 1s; }
       <div class="entry">
         
           
-            <p>Title: ClickOS and the Art of Network Function Virtualization<br>Authors: Joao Martins and Mohamed Ahmed, NEC Europe Ltd.; Costin Raiciu and Vladimir Olteanu, University Politehnica of Bucharest; Michio Honda, Roberto Bifulco, and Felipe Huici, NEC Europe Ltd.<br>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins" target="_blank" rel="external">URL</a>]</p>
+            <p>Title: ClickOS and the Art of Network Function Virtualization<br>Authors: Joao Martins and Mohamed Ahmed, NEC Europe Ltd.; Costin Raiciu and Vladimir Olteanu, University Politehnica of Bucharest; Michio Honda, Roberto Bifulco, and Felipe Huici, NEC Europe Ltd.<br>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins" target="_blank" rel="external">URL</a>]<br>Reference:</p>
+<ul>
+<li><a href="http://cnp.neclab.eu/" target="_blank" rel="external">Cloud Networking Platform Lab</a> (NEC Europe)</li>
+</ul>
 <hr>
 <ul>
 <li>The authors presents <em>ClickOS</em>, a high-performance, virtualize software middlebox platform.</li>
-<li>To support fast and easily programmable middlebox platform, ClickOS implements a minimalistic guest OS that is organized to run <em><a href="http://www.read.cs.ucla.edu/click/" target="_blank" rel="external">Click</a></em>, a software modular router, at rates of millions of packets per second.  It is built on top of MiniOS in the Xen hypervisor.  As a software switch, the authors employ the <em>VALE</em> switch [CoNEXT2012] instead of Open vSwitch.  They modified the Xen netback driver to implement the netmap API.</li>
+<li>To support fast and easily programmable middlebox platform, ClickOS implements a minimalistic guest OS that is organized to run <em><a href="http://www.read.cs.ucla.edu/click/" target="_blank" rel="external">Click</a></em>, a software modular router, at rates of millions of packets per second.  It is built on top of MiniOS in the Xen hypervisor.  The authors also introduce the <em>VALE</em> switch [CoNEXT2012] instead of Open vSwitch as the backend switch.  To do that, they modified the Xen netback driver to implement the netmap API.</li>
 <li>To demonstrate the feasibility, the authors test the following middlebox applications: Wire, EtherMonitor, IP Router, Firewall, Carrier Grade NAT, Software Broadband Remote Access Server, Intrusion Detection System, Load Balancer, and Flow Monitor.</li>
 <li>The source code is available from <a href="https://github.com/cnplab/clickos/" target="_blank" rel="external">cnplab@github</a>.</li>
 </ul>
