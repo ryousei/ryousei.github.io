@@ -114,6 +114,71 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-08T22:06:06.000Z">Dec 9 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Lightweight Memory Tracing<br>Authors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/payer" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>memTrace</em>, a lightweight memory tracing technique that builds on dynamic on-the-fly cross-ISA binary translation of 32-bit code to 64-bit code.</li>
+<li>Current software-only memory tracing incurs high performance overhead (up to 10x for <em>libdft</em> [VEE2012], 20x for <em>Valgrind</em>’s memcheck [PLDI2007], and up to 40x for <em>taintcheck</em> [NDSS2005]).  This is because every single memory access of the application is checked by additional code (memlet) and hardware is limited to a small set of watched locations (watchpoints).</li>
+<li>MemTrace dynamically translates 32-bit x86 application code to x64 code (i.e., 64-bit code), and that enables memlets, code sequences that are woven into the target application code to execute memory tracing, to use extra registers and a huge shadow memory space (64-bit address space).</li>
+<li>The authors demonstrates two memory tracing case studies: unlimited watchpoints and safe heap memory allocator.</li>
+<li>The prototype implementation extends the <em>libdetox</em> binary translation platform [VEE2011].</li>
+<li>The source code is available from <a href="https://github.com/gannimo/memTrace" target="_blank" rel="external">gannimo/memTrace@github</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/09/Lightweight-Memory-Tracing/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a></h1>
     
   
@@ -708,7 +773,22 @@ body{ -webkit-animation: bugfix infinite 1s; }
       <div class="entry">
         
           
-            <h2 id="Vitrualization">Vitrualization</h2>
+            <h2 id="2012_USENIX_ATC">2012 USENIX ATC</h2>
+<ol>
+<li><p><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap: A Novel Framework for Fast Packet I/O</a></p>
+<ul>
+<li>Authors: Luigi Rizzo, Università di Pisa, Italy</li>
+<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/rizzo" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>Software Techniques for Avoiding Hardware Virtualization Exits</p>
+<ul>
+<li>Authors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware</li>
+<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/agesen" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+</ol>
+<h2 id="2013_USENIX_ATC">2013 USENIX ATC</h2>
 <ol>
 <li><p><a href="/2014/12/01/Ef%EF%AC%81cient-and-Scalable-Paravirtual-I-O-System/">Efficient and Scalable Paravirtual I/O System</a></p>
 <ul>
@@ -728,6 +808,12 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/ram" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
+<li><p><a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a></p>
+<ul>
+<li>Authors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich</li>
+<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/payer" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
 <li><p>Optimizing VM Checkpointing for Restore Performance in VMware ESXi</p>
 <ul>
 <li>Authors: Irene Zhang, University of Washington and VMware; Tyler Denniston, MIT CSAIL and VMware; Yury Baskakov,VMware; Alex Garthwaite, CloudPhysics and VMware</li>
@@ -738,90 +824,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <ul>
 <li>Authors: Dejan Novaković, Nedeljko Vasić, and Stanko Novaković, École Polytechnique Fédérale de Lausanne (EPFL); Dejan Kostić, Institute IMDEA Networks; Ricardo Bianchini, Rutgers University</li>
 <li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/novakovi%C4%87" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>ReNIC: Architectural extension to SR-IOV I/O virtualization for efficient replication</p>
-<ul>
-<li>Authors:     Yaozu Dong, Yu Chen, Zhenhao Pan, Jinquan Dai, Yunhong Jiang</li>
-<li>ACM TACO, Vol.8, No.4, January 2012</li>
-</ul>
-</li>
-<li><p>XvMotion: Unified Virtual Machine Migration over Long Distance</p>
-<ul>
-<li>Authors: Ali José Mashtizadeh, Stanford University; Min Cai, Gabriel Tarasuk-Levin, and Ricardo Koller, VMware, Inc.; Tal Garfinkel; Sreekanth Setty, VMware, Inc.</li>
-<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/mashtizadeh" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>GPUvm: Why Not Virtualizing GPUs at the Hypervisor?</p>
-<ul>
-<li>Authors: Yusuke Suzuki, Keio University; Shinpei Kato, Nagoya University; Hiroshi Yamada, Tokyo University of Agriculture and Technology; Kenji Kono, Keio University</li>
-<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/suzuki" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Software Techniques for Avoiding Hardware Virtualization Exits</p>
-<ul>
-<li>Authors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware</li>
-<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/agesen" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>vBalance: Using Interrupt Load Balance to Improve I/O Performance for SMP Virtual Machines</p>
-<ul>
-<li>Authors:     Luwei Cheng    and Cho-Li Wang, The University of Hong Kong</li>
-<li>2012 ACM SoCC</li>
-</ul>
-</li>
-</ol>
-<h2 id="Kernel">Kernel</h2>
-<ol>
-<li><p><a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a></p>
-<ul>
-<li>Authors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, and Vlad Zolotarov, Cloudius Systems</li>
-<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Arrakis: The Operating System is the Control Plane</p>
-<ul>
-<li>Authors: Simon Peter, Jialin Li, Irene Zhang, Dan R. K. Ports, Doug Woos, Arvind Krishnamurthy, and Thomas Anderson, University of Washington; Timothy Roscoe, ETH Zürich</li>
-<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/peter" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>IX: A Protected Dataplane Operating System for High Throughput and Low Latency</p>
-<ul>
-<li>Authors: Adam Belay, Stanford University; George Prekas, École Polytechnique Fédérale de Lausanne (EPFL); Ana Klimovic, Samuel Grossman, and Christos Kozyrakis, Stanford University; Edouard Bugnion, École Polytechnique Fédérale de Lausanne (EPFL)</li>
-<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Shielding Applications from an Untrusted Cloud with Haven</p>
-<ul>
-<li>Authors: Andrew Baumann, Marcus Peinado, and Galen Hunt, Microsoft Research</li>
-<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/baumann" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="Networking">Networking</h2>
-<ol>
-<li><p><a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</a></p>
-<ul>
-<li>Authors: EunYoung Jeong, Shinae Woo, Muhammad Jamshed, and Haewon Jeong, Korea Advanced Institute of Science and Technology (KAIST); Sunghwan Ihm, Princeton University; Dongsu Han and KyoungSoo Park, Korea Advanced Institute of Science and Technology (KAIST)</li>
-<li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/jeong" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap: A Novel Framework for Fast Packet I/O</a></p>
-<ul>
-<li>Authors: Luigi Rizzo, Università di Pisa, Italy</li>
-<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/rizzo" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/07/Speeding-up-packet-I-O-in-virtual-machines/">Speeding up packet I/O in virtual machines</a></p>
-<ul>
-<li>Authors: Luigi Rizzo, Giuseppe Lettieri, Vincenzo Maffione, Università di Pisa, Italy</li>
-<li>2013 IEEE/ACM ANCS [<a href="https://sites.google.com/a/ancsconf.org/2013/conference-program" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a></p>
-<ul>
-<li>Authors: Joao Martins and Mohamed Ahmed, NEC Europe Ltd.; Costin Raiciu and Vladimir Olteanu, University Politehnica of Bucharest; Michio Honda, Roberto Bifulco, and Felipe Huici, NEC Europe Ltd.</li>
-<li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
 <li><p>Network Interface Design for Low Latency Request-Response Protocols</p>
@@ -842,25 +844,121 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/cardwell" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
-</ol>
-<h2 id="Misc-">Misc.</h2>
-<ol>
-<li><p>Lightweight Memory Tracing</p>
-<ul>
-<li>Authors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/payer" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
 <li><p>When Slower Is Faster: On Heterogeneous Multicores for Reliable Systems</p>
 <ul>
 <li>Authors: Tomas Hruby, Herbert Bos, and Andrew S. Tanenbaum, VU University Amsterdam</li>
 <li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/hruby" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
+</ol>
+<h2 id="2014_USENIX_ATC">2014 USENIX ATC</h2>
+<ol>
+<li><p><a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a></p>
+<ul>
+<li>Authors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, and Vlad Zolotarov, Cloudius Systems</li>
+<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>XvMotion: Unified Virtual Machine Migration over Long Distance</p>
+<ul>
+<li>Authors: Ali José Mashtizadeh, Stanford University; Min Cai, Gabriel Tarasuk-Levin, and Ricardo Koller, VMware, Inc.; Tal Garfinkel; Sreekanth Setty, VMware, Inc.</li>
+<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/mashtizadeh" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>GPUvm: Why Not Virtualizing GPUs at the Hypervisor?</p>
+<ul>
+<li>Authors: Yusuke Suzuki, Keio University; Shinpei Kato, Nagoya University; Hiroshi Yamada, Tokyo University of Agriculture and Technology; Kenji Kono, Keio University</li>
+<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/suzuki" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
 <li><p>Large Pages May Be Harmful on NUMA Systems</p>
 <ul>
 <li>Authors: Fabien Gaud, Simon Fraser University; Baptiste Lepers, CNRS; Jeremie Decouchant, Grenoble University; Justin Funston and Alexandra Fedorova, Simon Fraser University; Vivien Quéma, Grenoble INP</li>
 <li>2014 USENIX ATC [<a href="">URL</a>]</li>
+</ul>
+</li>
+</ol>
+<h2 id="2014_USENIX_OSDI">2014 USENIX OSDI</h2>
+<ol>
+<li><p>Arrakis: The Operating System is the Control Plane</p>
+<ul>
+<li>Authors: Simon Peter, Jialin Li, Irene Zhang, Dan R. K. Ports, Doug Woos, Arvind Krishnamurthy, and Thomas Anderson, University of Washington; Timothy Roscoe, ETH Zürich</li>
+<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/peter" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>IX: A Protected Dataplane Operating System for High Throughput and Low Latency</p>
+<ul>
+<li>Authors: Adam Belay, Stanford University; George Prekas, École Polytechnique Fédérale de Lausanne (EPFL); Ana Klimovic, Samuel Grossman, and Christos Kozyrakis, Stanford University; Edouard Bugnion, École Polytechnique Fédérale de Lausanne (EPFL)</li>
+<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>Shielding Applications from an Untrusted Cloud with Haven</p>
+<ul>
+<li>Authors: Andrew Baumann, Marcus Peinado, and Galen Hunt, Microsoft Research</li>
+<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/baumann" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+</ol>
+<h2 id="2014_USENIX_NSDI">2014 USENIX NSDI</h2>
+<ol>
+<li><p><a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</a></p>
+<ul>
+<li>Authors: EunYoung Jeong, Shinae Woo, Muhammad Jamshed, and Haewon Jeong, Korea Advanced Institute of Science and Technology (KAIST); Sunghwan Ihm, Princeton University; Dongsu Han and KyoungSoo Park, Korea Advanced Institute of Science and Technology (KAIST)</li>
+<li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/jeong" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p><a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a></p>
+<ul>
+<li>Authors: Joao Martins and Mohamed Ahmed, NEC Europe Ltd.; Costin Raiciu and Vladimir Olteanu, University Politehnica of Bucharest; Michio Honda, Roberto Bifulco, and Felipe Huici, NEC Europe Ltd.</li>
+<li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+</ol>
+<h2 id="2011_ACM_SoCC">2011 ACM SoCC</h2>
+<ol>
+<li>Improving Per-Node Efficiency in the Datacenter with New OS Abstractions<ul>
+<li>Authors: Barret Rhoden, Kevin Klues, David Zhu, Eric Brewer, University of California, Berkeley</li>
+<li>2011 ACM SoCC</li>
+</ul>
+</li>
+</ol>
+<h2 id="2012_ACM_SoCC">2012 ACM SoCC</h2>
+<ol>
+<li>vBalance: Using Interrupt Load Balance to Improve I/O Performance for SMP Virtual Machines<ul>
+<li>Authors:     Luwei Cheng    and Cho-Li Wang, The University of Hong Kong</li>
+<li>2012 ACM SoCC</li>
+</ul>
+</li>
+</ol>
+<h2 id="2013_IEEE/ACM_ANCS">2013 IEEE/ACM ANCS</h2>
+<ol>
+<li><a href="/2014/12/07/Speeding-up-packet-I-O-in-virtual-machines/">Speeding up packet I/O in virtual machines</a><ul>
+<li>Authors: Luigi Rizzo, Giuseppe Lettieri, Vincenzo Maffione, Università di Pisa, Italy</li>
+<li>2013 IEEE/ACM ANCS [<a href="https://sites.google.com/a/ancsconf.org/2013/conference-program" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+</ol>
+<h2 id="VLDB">VLDB</h2>
+<ol>
+<li>RemusDB: Transparent High-Availability for Database Systems<ul>
+<li>Authors: Umar Farooq Minhas (University of Waterloo), Shriram Rajagopalan (University of British Columbia), Brendan Cully (University of British Columbia), Ashraf Aboulnaga (University of Waterloo), Ken Salem (University of Waterloo), Andrew Warfield (University of British Columbia)</li>
+<li>2011 VLDB</li>
+</ul>
+</li>
+</ol>
+<h2 id="ACM_TACO">ACM TACO</h2>
+<ol>
+<li>ReNIC: Architectural extension to SR-IOV I/O virtualization for efficient replication<ul>
+<li>Authors:     Yaozu Dong, Yu Chen, Zhenhao Pan, Jinquan Dai, Yunhong Jiang</li>
+<li>ACM TACO, Vol.8, No.4, January 2012</li>
+</ul>
+</li>
+</ol>
+<h2 id="CACM">CACM</h2>
+<ol>
+<li>Operating System Support for Database Management<ul>
+<li>Author: Michael Stonebraker, University of California, Berkeley</li>
+<li>Communication of the ACM, Vol.24, No.7, July 1981</li>
 </ul>
 </li>
 </ol>
@@ -882,82 +980,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
 
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/11/30/hello-world/">Hello World</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-11-30T12:58:29.000Z">Nov 30 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/11/30/hello-world/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
+  
+    <a href="/page/2/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -976,6 +1003,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a>
       </li>
     
@@ -991,10 +1022,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
         <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</a>
       </li>
     
-      <li>
-        <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -1006,6 +1033,8 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <h3 class="title">Tags</h3>
   
     <a href="/tags/kernel/">kernel<small>1</small></a>
+  
+    <a href="/tags/memory/">memory<small>1</small></a>
   
     <a href="/tags/networking/">networking<small>4</small></a>
   

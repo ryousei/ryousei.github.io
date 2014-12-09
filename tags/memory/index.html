@@ -5,15 +5,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems | My Reading List</title>
+  <title>memory | My Reading List</title>
   <meta name="author" content="Ryousei Takano">
-  
-  <meta name="description" content="Title: mTCP: a Highly Scalable User-level TCP Stack for Multicore SystemsAuthors: EunYoung Jeong, Shinae Woo, Muhammad Jamshed, and Haewon Jeong, Kore">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems"/>
+  
   <meta property="og:site_name" content="My Reading List"/>
 
   
@@ -99,11 +97,34 @@ body{ -webkit-animation: bugfix infinite 1s; }
   	<div class="inner">
       <div class="padding">
     		
-          <h1>mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</h1>
+          <h2>A diary of a computer scientest</h2>
+        
+      </div>
+  	</div>
+  </div>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper" class="padding">
+<h2 class="archive-title tag">memory</h2>
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a></h1>
+    
+  
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-04T23:54:03.000Z">Dec 5 2014</time>
+              <time datetime="2014-12-08T22:06:06.000Z">Dec 9 2014</time>
             </li>
             
               <li>
@@ -118,100 +139,31 @@ body{ -webkit-animation: bugfix infinite 1s; }
             <li>
               <span class="heading-span">With: </span>
               
-            </li>
           </ul>
-        
-      </div>
-  	</div>
-  </div>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper" class="padding"><article class="post">
-  
-  
-    <div class="post-content">
-  
+        </header>
       
       <div class="entry">
         
-          <p>Title: mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems<br>Authors: EunYoung Jeong, Shinae Woo, Muhammad Jamshed, and Haewon Jeong, Korea Advanced Institute of Science and Technology (KAIST); Sunghwan Ihm, Princeton University; Dongsu Han and KyoungSoo Park, Korea Advanced Institute of Science and Technology (KAIST)<br>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/jeong" target="_blank" rel="external">URL</a>] (<strong>Community award</strong>)<br>Reference:</p>
-<ul>
-<li><a href="http://shader.kaist.edu/mtcp/" target="_blank" rel="external">mTCP</a> (KAIST)</li>
-</ul>
+          
+            <p>Title: Lightweight Memory Tracing<br>Authors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/payer" target="_blank" rel="external">URL</a>]</p>
 <hr>
 <ul>
-<li>The authors presents <em>mTCP</em>, a highly scalable user-level TCP stack for multicore systems.</li>
-<li>Large flows are easy to fill up 10 Gbps. But, small flows are hard to fill up 10 Gbps regardless of the number of CPU cores.  This is because the Linux kernel is not designed for multicore systems.  In a web server case, 83% of CPU usage spent inside kernel.</li>
-<li>Several proposals for improving in-kernel TCP performance, including <em>affinity accept</em> [EuroSys2012], <em>MegaPipe</em> [OSDI2012], and <em>FlexSC</em> [OSDI2010], however, they are not sufficient.  As another approach, mTCP, <em>SolarFlare <a href="http://www.openonload.org/" target="_blank" rel="external">OpenOnload</a></em> and <em>Sandstorm</em> [SIGCOMM2014] run the entire network stack in the userspace to eliminate kernel crossing overheads and optimize packet processing without kernel modifications.</li>
-<li>mTCP makes full use of extreme parallelism and batch processing:<ul>
-<li>Per-core resource management (listening queue, file descriptor, packet queue)</li>
-<li>Lock-free data structures and cache-aware threading</li>
-<li>Eliminate system call overhead</li>
-<li>Reduce context switch cost by event batching</li>
-<li>Easily portable APIs for compatibility (similar to BSD socket API)</li>
-</ul>
-</li>
-<li>This group has proposed <em>PacketShader</em>, GPU-accelerated software router in the ACM SIGCOMM 2010.  As a part of mTCP (user-level pacekt I/O library), they extend PacketShader I/O engine (PSIO) to support an efficient event-driven packet I/O interface.  Other user-level packet I/O engines have been proposed, including <em>Intel DPDK</em> and <em><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap</a></em> [USENIX2012].</li>
-<li>The source code is available from <a href="https://github.com/eunyoung14/mtcp" target="_blank" rel="external">eunyoung14@github</a>.</li>
+<li>The authors present <em>memTrace</em>, a lightweight memory tracing technique that builds on dynamic on-the-fly cross-ISA binary translation of 32-bit code to 64-bit code.</li>
+<li>Current software-only memory tracing incurs high performance overhead (up to 10x for <em>libdft</em> [VEE2012], 20x for <em>Valgrind</em>’s memcheck [PLDI2007], and up to 40x for <em>taintcheck</em> [NDSS2005]).  This is because every single memory access of the application is checked by additional code (memlet) and hardware is limited to a small set of watched locations (watchpoints).</li>
+<li>MemTrace dynamically translates 32-bit x86 application code to x64 code (i.e., 64-bit code), and that enables memlets, code sequences that are woven into the target application code to execute memory tracing, to use extra registers and a huge shadow memory space (64-bit address space).</li>
+<li>The authors demonstrates two memory tracing case studies: unlimited watchpoints and safe heap memory allocator.</li>
+<li>The prototype implementation extends the <em>libdetox</em> binary translation platform [VEE2011].</li>
+<li>The source code is available from <a href="https://github.com/gannimo/memTrace" target="_blank" rel="external">gannimo/memTrace@github</a>.</li>
 </ul>
 
+          
         
       </div>
       <footer>
         
-          
-          
-  
-  <div class="tags">
-    <a href="/tags/networking/">networking</a>
-  </div>
-
-          <div class="share">
-  
-
-    
-
-    
-      <div class="g-plusone"></div>
-
-      <script type="text/javascript">
-        window.___gcfg = {lang: 'en-GB'};
-
-        (function() {
-          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-          po.src = 'https://apis.google.com/js/platform.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-        })();
-      </script>
-    
-
-    
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="halfer53">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    
-  
-</div>
-          
-<nav class="article-nav clearfix">
- 
- <div class="article-prev" >
- <a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/" title="netmap: a novel framework for fast packet I/O">
-  <i class="fa fa-long-arrow-left"></i>
-  <span>
-  netmap: a novel framework for fast packet I/O</span>
-</a>
-</div>
-
-
-<div class="article-next">
-<a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/"  title="OSv - Optimizing the Operating System for Virtual Machines">
- <span>OSv - Optimizing the Operating System for Virtual Machines
-</span>
-<i class="fa fa-long-arrow-right"></i>
-</a>
-</div>
-
-</nav>
-
+          <div class="alignright">
+            <a href="/2014/12/09/Lightweight-Memory-Tracing/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
         
         <div class="clearfix"></div>
       </footer>
@@ -219,13 +171,19 @@ body{ -webkit-animation: bugfix infinite 1s; }
 </article>
 
 
-<section id="comment">
-  <h2 class="title">Comments</h2>
 
   
-</section>
 
-</div></div>
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+
+
+
+
+   </div></div>
     <aside id="sidebar" class="alignright"><div class="padding">
 	
 	  <div class="search">

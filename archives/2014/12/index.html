@@ -118,6 +118,71 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-08T22:06:06.000Z">Dec 9 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Lightweight Memory Tracing<br>Authors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/payer" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>memTrace</em>, a lightweight memory tracing technique that builds on dynamic on-the-fly cross-ISA binary translation of 32-bit code to 64-bit code.</li>
+<li>Current software-only memory tracing incurs high performance overhead (up to 10x for <em>libdft</em> [VEE2012], 20x for <em>Valgrind</em>’s memcheck [PLDI2007], and up to 40x for <em>taintcheck</em> [NDSS2005]).  This is because every single memory access of the application is checked by additional code (memlet) and hardware is limited to a small set of watched locations (watchpoints).</li>
+<li>MemTrace dynamically translates 32-bit x86 application code to x64 code (i.e., 64-bit code), and that enables memlets, code sequences that are woven into the target application code to execute memory tracing, to use extra registers and a huge shadow memory space (64-bit address space).</li>
+<li>The authors demonstrates two memory tracing case studies: unlimited watchpoints and safe heap memory allocator.</li>
+<li>The prototype implementation extends the <em>libdetox</em> binary translation platform [VEE2011].</li>
+<li>The source code is available from <a href="https://github.com/gannimo/memTrace" target="_blank" rel="external">gannimo/memTrace@github</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/09/Lightweight-Memory-Tracing/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a></h1>
     
   
@@ -701,6 +766,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a>
       </li>
     
@@ -716,10 +785,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
         <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</a>
       </li>
     
-      <li>
-        <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -731,6 +796,8 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <h3 class="title">Tags</h3>
   
     <a href="/tags/kernel/">kernel<small>1</small></a>
+  
+    <a href="/tags/memory/">memory<small>1</small></a>
   
     <a href="/tags/networking/">networking<small>4</small></a>
   
