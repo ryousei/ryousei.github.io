@@ -136,7 +136,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <p>Title: Software Techniques for Avoiding Hardware Virtualization Exits<br>Authors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware<br>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/agesen" target="_blank" rel="external">URL</a>]</p>
 <hr>
 <ul>
-<li>The authors present a software-based optimization technique to eliminate VM exits.</li>
+<li>The authors present a set of software-based optimization techniques to eliminate VM exits.</li>
 <li>Hardware-assisted x86 virtualization suffers from expensive VM exits, which cause guest OS/VMM transitions.  To reduce the overhead, the binary translator detects cluster/pair of instructions, which generate multiple VM exits, and translates them together to avoid VM exits.  It is also useful for a nested VM environment.</li>
 <li>For example, the following code updates page table entry.  Each write causes a VM exit, and VMM updates a shadow page table entry.  Using the proposed technique, VMM inspects the next instruction at the first exit, and executes both instruction at once.</li>
 </ul>
