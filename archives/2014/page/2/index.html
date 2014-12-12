@@ -118,6 +118,80 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/01/Efﬁcient-and-Scalable-Paravirtual-I-O-System/">Efficient and Scalable Paravirtual I/O System</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-01T09:21:04.000Z">Dec 1 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Efficient and Scalable Paravirtual I/O System<br>Authors: Nadav Har’El, Abel Gordon, and Alex Landau, IBM Research–Haifa; Muli Ben-Yehuda, Technion IIT and Hypervisor Consulting; Avishay Traeger and Razya Ladelsky, IBM Research–Haifa<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/har%E2%80%99el" target="_blank" rel="external">URL</a>]<br>Reference:</p>
+<ul>
+<li><a href="https://github.com/abelg/virtual_io_acceleration/wiki/Virtual-I-O-acceleration-technologies-for-KVM" target="_blank" rel="external">Virtual I O acceleration technologies for KVM</a> (Abel Gorden@github)</li>
+</ul>
+<hr>
+<ul>
+<li>The authors proposes a novel para-virtual I/O mechanism, <em>ELVIS (Efficient and scaLable paraVirtual I/O System)</em>.<ul>
+<li>Fine-grained I/O scheduling (instead of thread-based I/O scheduling): a single I/O thread runs on a dedicated I/O core, and handles I/O requests of multiple VMs.</li>
+<li>Exitless I/O request notification: polling in host’s I/O core</li>
+<li>Exitless I/O reply notification: using ELI</li>
+</ul>
+</li>
+<li>They implemented ELVIS in KVM/vhost, and demonstrated the performance of I/O intensive applications comparing to the unmodified KVM with vhost and SR-IOV+ELI.</li>
+<li><em>ELI (Exit-Less Interruption)</em> is their previous work [ASPLOS2012], and improves interrupt virtualization efficiency.  In this paper, they emulate <em>posted interrupts</em>, which is a new feature announced for future x86 processors, by using ELI.<ul>
+<li><a href="http://events.linuxfoundation.org/sites/events/files/slides/VT-d%20Posted%20Interrupts-final%20.pdf" target="_blank" rel="external">VT-d Posted Interrupts</a></li>
+<li><a href="http://lwn.net/Articles/619691/" target="_blank" rel="external">Add VT-d Posted-Interrupts support for KVM</a> (LWN)</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/01/Efﬁcient-and-Scalable-Paravirtual-I-O-System/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/11/30/TODO-list/">TODO list</a></h1>
     
   
@@ -150,13 +224,25 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li><p><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap: A Novel Framework for Fast Packet I/O</a></p>
 <ul>
 <li>Authors: Luigi Rizzo, Università di Pisa, Italy</li>
-<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/rizzo" target="_blank" rel="external">URL</a>]</li>
+<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/rizzo" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
-<li><p>Software Techniques for Avoiding Hardware Virtualization Exits</p>
+<li><p><a href="/2014/12/12/Software-Techniques-for-Avoiding-Hardware-Virtualization-Exits/">Software Techniques for Avoiding Hardware Virtualization Exits</a></p>
 <ul>
 <li>Authors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware</li>
 <li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/agesen" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>Software Persistent Memory</p>
+<ul>
+<li>Authors: Jorge Guerra, Leonardo Mármol, Daniel Campello, Carlos Crespo, Raju Rangaswami, and Jinpeng Wei, Florida International University</li>
+<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/guerra" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>Gdev: First-Class GPU Resource Management in the Operating System</p>
+<ul>
+<li>Authors: Shinpei Kato, Michael McThrow, Carlos Maltzahn, and Scott Brandt, UC Santa Cruz</li>
+<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/kato" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
 </ol>
@@ -283,6 +369,12 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <ul>
 <li>Authors: Joao Martins and Mohamed Ahmed, NEC Europe Ltd.; Costin Raiciu and Vladimir Olteanu, University Politehnica of Bucharest; Michio Honda, Roberto Bifulco, and Felipe Huici, NEC Europe Ltd.</li>
 <li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins" target="_blank" rel="external">URL</a>]</li>
+</ul>
+</li>
+<li><p>SENIC: Scalable NIC for End-Host Rate Limiting</p>
+<ul>
+<li>Authors: Sivasankar Radhakrishnan, University of California, San Diego; Yilong Geng and Vimalkumar Jeyakumar, Stanford University; Abdul Kabbani, Google Inc.; George Porter, University of California, San Diego; Amin Vahdat, Google Inc. and University of California, San Diego</li>
+<li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/radhakrishnan" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
 </ol>
@@ -460,6 +552,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/12/Software-Techniques-for-Avoiding-Hardware-Virtualization-Exits/">Software Techniques for Avoiding Hardware Virtualization Exits</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/">Improving Server Application Performance via Pure TCP ACK Receive Optimization</a>
       </li>
     
@@ -473,10 +569,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2014/12/07/Speeding-up-packet-I-O-in-virtual-machines/">Speeding up packet I/O in virtual machines</a>
-      </li>
-    
-      <li>
-        <a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap: a novel framework for fast packet I/O</a>
       </li>
     
   </ul>
@@ -495,7 +587,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/networking/">networking<small>5</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>6</small></a>
+    <a href="/tags/virtualization/">virtualization<small>7</small></a>
   
 </div>
 
