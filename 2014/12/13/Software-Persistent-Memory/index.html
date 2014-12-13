@@ -5,15 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Software Techniques for Avoiding Hardware Virtualization Exits | My Reading List</title>
+  <title>Software Persistent Memory | My Reading List</title>
   <meta name="author" content="Ryousei Takano">
   
-  <meta name="description" content="Title: Software Techniques for Avoiding Hardware Virtualization ExitsAuthors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware2012 US">
+  <meta name="description" content="Title: Software Persistent MemoryAuthors: Jorge Guerra, Leonardo Mármol, Daniel Campello, Carlos Crespo, Raju Rangaswami, and Jinpeng Wei, Florida Int">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Software Techniques for Avoiding Hardware Virtualization Exits"/>
+  <meta property="og:title" content="Software Persistent Memory"/>
   <meta property="og:site_name" content="My Reading List"/>
 
   
@@ -99,11 +99,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
   	<div class="inner">
       <div class="padding">
     		
-          <h1>Software Techniques for Avoiding Hardware Virtualization Exits</h1>
+          <h1>Software Persistent Memory</h1>
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-12T00:00:51.000Z">Dec 12 2014</time>
+              <time datetime="2014-12-13T03:04:11.000Z">Dec 13 2014</time>
             </li>
             
               <li>
@@ -133,17 +133,16 @@ body{ -webkit-animation: bugfix infinite 1s; }
       
       <div class="entry">
         
-          <p>Title: Software Techniques for Avoiding Hardware Virtualization Exits<br>Authors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware<br>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/agesen" target="_blank" rel="external">URL</a>]</p>
+          <p>Title: Software Persistent Memory<br>Authors: Jorge Guerra, Leonardo Mármol, Daniel Campello, Carlos Crespo, Raju Rangaswami, and Jinpeng Wei, Florida International University<br>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/guerra" target="_blank" rel="external">URL</a>]</p>
 <hr>
 <ul>
-<li>The authors present a set of software-based optimization techniques to eliminate VM exits.</li>
-<li>Hardware-assisted x86 virtualization suffers from expensive VM exits, which cause guest OS/VMM transitions.  To reduce the overhead, the binary translator detects cluster/pair of instructions, which generate multiple VM exits, and translates them together to avoid VM exits.  It is also useful for a nested VM environment.</li>
-<li>For example, the following code updates page table entry.  Each write causes a VM exit, and VMM updates a shadow page table entry.  Using the proposed technique, VMM inspects the next instruction at the first exit, and executes both instruction at once.</li>
+<li>The authors present <em>Software Persistent Memory (SoftPM)</em>, a lightweight persistent memory abstraction for C.</li>
+<li>SoftPM automatically discovers persistent data dependencies from the user-defined root structure.  In the following example code, <em>cid</em> is a root structure.</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">mov</span> <span class="number">4</span>(%<span class="number">ecx</span>), %<span class="literal">esi</span></div><div class="line"><span class="keyword">mov</span> (%<span class="number">ecx</span>), %<span class="number">ebx</span></div></pre></td></tr></table></figure>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> l {</div><div class="line">	<span class="keyword">int</span> v;</div><div class="line">	<span class="keyword">struct</span> l *next;</div><div class="line">} <span class="built_in">list</span>;</div><div class="line"></div><div class="line"><span class="keyword">struct</span> pcont {</div><div class="line">	<span class="built_in">list</span> *head;</div><div class="line">} *C;</div><div class="line"></div><div class="line">foo() {</div><div class="line">	cid = pCAlloc(&C, <span class="keyword">sizeof</span>(*C)); <span class="comment">/* create a new container */</span></div><div class="line">	<span class="built_in">list</span> *n1 = <span class="built_in">malloc</span>(...);</div><div class="line">	C-&gt;head = n1;</div><div class="line">	n1-&gt;v = X;</div><div class="line">	<span class="built_in">list</span> *n2 = <span class="built_in">malloc</span>(...);</div><div class="line">	n2-&gt;v = Y;</div><div class="line">	n1-&gt;next = n2;</div><div class="line">	:</div><div class="line">	pPoint(cid); <span class="comment">/* create a persistent point asynchronously */</span></div><div class="line">}</div></pre></td></tr></table></figure>
 
 <ul>
-<li>The proposed technique has been implemented in VMWare products (Workstation, Fusion, ESX) and validated by years of use in the field.</li>
+<li>There are a lot of persistent memory libraries (<em>RVM</em>, <em>SSDAlloc</em>, <em>NV-Heep</em>, <em>Mnemosyne</em>) and persistent object stores (<em>ObjectStore</em>, <em>Thor</em>). <em>Mnemosyne</em> [ASPLOS2011] and <em>NV-Heaps</em> [ASPLOS2011] also provide a persistent memory abstractions similar to SoftPM, however, they are explicitly designed for byte addressable non-volatile memories.  Some operating systems, e.g., <em>Grasshopper</em> [ComputerSystems1994], support a single level persistent store in which pointer swizzling is employed to convert persistent store references to in-memory addresses at the page granularity.</li>
 </ul>
 
         
@@ -154,7 +153,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
   
   <div class="tags">
-    <a href="/tags/virtualization/">virtualization</a>
+    <a href="/tags/memory/">memory</a>
   </div>
 
           <div class="share">
@@ -185,18 +184,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
- <div class="article-prev" >
- <a href="/2014/12/13/Software-Persistent-Memory/" title="Software Persistent Memory">
-  <i class="fa fa-long-arrow-left"></i>
-  <span>
-  Software Persistent Memory</span>
-</a>
-</div>
-
 
 <div class="article-next">
-<a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/"  title="Improving Server Application Performance via Pure TCP ACK Receive Optimization">
- <span>Improving Server Application Performance via Pure TCP ACK Receive Optimization
+<a href="/2014/12/12/Software-Techniques-for-Avoiding-Hardware-Virtualization-Exits/"  title="Software Techniques for Avoiding Hardware Virtualization Exits">
+ <span>Software Techniques for Avoiding Hardware Virtualization Exits
 </span>
 <i class="fa fa-long-arrow-right"></i>
 </a>
