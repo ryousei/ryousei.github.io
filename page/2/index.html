@@ -114,6 +114,69 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/">Hyper-Switch: A Scalable Software Virtual Switching Architecture</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-02T22:41:23.000Z">Dec 3 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Hyper-Switch: A Scalable Software Virtual Switching Architecture<br>Authors: Kaushik Kumar Ram, Alan L. Cox, Mehul Chadha, and Scott Rixner, Rice University<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/ram" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>This paper presents <em>Hyper-Switch</em>, a efficient and scalable software-based switch, and several optimization techniques, including preemptive packet copying, batching hypervisor entries, and offloading packet processing.</li>
+<li>Benson et al. reports that 80% of the traffic originating at servers in cloud data centers never leaves the rack [IMC2010].  Also the number of CPU cores in a server will grow continuously.  These implies that the role of vSwich becomes much more crucial.  Hyper-Switch focuses on the performance problem of the last hop in a virtualized data center.</li>
+<li>The prototype is implemented based on Open vSwitch under the Xen 4.2 platform.  The authors have ported essential parts of Open vSwitch’s datapath (from the driver domain) to the Xen hypervisor.</li>
+<li>The experimental results show the advantage over unmodified Xen and KVM with vhost-net.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/02/vTurbo-Accelerating-Virtual-Machine-I-O-Processing-Using-Designated-Turbo-Sliced-Core/">vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core</a></h1>
     
   
@@ -264,7 +327,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2014-11-30T13:17:54.000Z">Nov 30 2014</time>
+              <time datetime="2014-11-30T14:17:54.000Z">Nov 30 2014</time>
             </li>
             
               <li>
@@ -437,7 +500,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
-<li><p>SENIC: Scalable NIC for End-Host Rate Limiting</p>
+<li><p><a href="/2014/12/15/SENIC-Scalable-NIC-for-End-Host-Rate-Limiting/">SENIC: Scalable NIC for End-Host Rate Limiting</a></p>
 <ul>
 <li>Authors: Sivasankar Radhakrishnan, University of California, San Diego; Yilong Geng and Vimalkumar Jeyakumar, Stanford University; Abdul Kabbani, Google Inc.; George Porter, University of California, San Diego; Amin Vahdat, Google Inc. and University of California, San Diego</li>
 <li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/radhakrishnan" target="_blank" rel="external">URL</a>]</li>
@@ -478,6 +541,20 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li><p>Fine-Grained Fault Tolerance using Device Checkpoints</p>
 <ul>
 <li>Authors: Asim Kadav (University of Wisconsin-Madison), Matthew J. Renzelmann (University of Wisconsin-Madison), Michael M. Swift (University of Wisconsin-Madison)</li>
+</ul>
+</li>
+</ol>
+<h2 id="2014_ACM_VEE">2014 ACM VEE</h2>
+<ol>
+<li>Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Wwitch for Virtual Machines<ul>
+<li>Authors:  Julian Stecklina, TU Dresden</li>
+</ul>
+</li>
+</ol>
+<h2 id="2013_ACM_HPDC">2013 ACM HPDC</h2>
+<ol>
+<li>Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects<ul>
+<li>Authors:</li>
 </ul>
 </li>
 </ol>
@@ -626,6 +703,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/15/SENIC-Scalable-NIC-for-End-Host-Rate-Limiting/">SENIC: Scalable NIC for End-Host Rate Limiting</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/13/Software-Persistent-Memory/">Software Persistent Memory</a>
       </li>
     
@@ -639,10 +720,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a>
-      </li>
-    
-      <li>
-        <a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a>
       </li>
     
   </ul>
@@ -659,7 +736,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/memory/">memory<small>2</small></a>
   
-    <a href="/tags/networking/">networking<small>5</small></a>
+    <a href="/tags/networking/">networking<small>6</small></a>
   
     <a href="/tags/virtualization/">virtualization<small>7</small></a>
   
