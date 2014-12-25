@@ -118,6 +118,79 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-04T06:03:15.000Z">Dec 4 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: OSv - Optimizing the Operating System for Virtual Machines<br>Authors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, and Vlad Zolotarov, Cloudius Systems<br>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]<br>Reference:</p>
+<ul>
+<li><a href="http://osv.io/" target="_blank" rel="external">OSv - the operating system designed for the cloud</a></li>
+</ul>
+<hr>
+<ul>
+<li>The authors present OSv, a new guest operating system designed specifically for running a single application on a virtual machine in the cloud.  The first author is famous as the father of the KVM hypervisor and a founder at Cloudius Systems.</li>
+<li>OSv follows the library OS design, proposed by <em>exokernel</em> in 1990s.  In OSv case, a hyperviosr replaces the role of exokernel.</li>
+<li>OSv has been developed from scratch.  The code is written in C++11.<ul>
+<li>Single address space: all application thread and kernel use the same page tables.</li>
+<li>No spinlocks.</li>
+<li>Thread scheduler: lock-free, preemptive, tick-less, fair, scalable, and efficient</li>
+<li>Network channels: employ Van Jacobson’s net channel idea to reduce contentions between an application thread context and an interrupt context.</li>
+<li>Beyond Linux API: shrinker, JVM balloon</li>
+</ul>
+</li>
+<li>It originally supports only Java applications, and now applications written in Lua, Ruby, and so on, run on OSv.  Some guest OSs focus on running only a single high-level language. For example, Erlang on Xen, Mirage OS (OCaml) [ASPLOS2013], and Libra (J9 JVM).</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/">Hyper-Switch: A Scalable Software Virtual Switching Architecture</a></h1>
     
   
@@ -331,7 +404,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2014-11-30T14:17:54.000Z">Nov 30 2014</time>
+              <time datetime="2014-11-30T13:17:54.000Z">Nov 30 2014</time>
             </li>
             
               <li>
@@ -450,7 +523,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
-<li><p>XvMotion: Unified Virtual Machine Migration over Long Distance</p>
+<li><p><a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a></p>
 <ul>
 <li>Authors: Ali José Mashtizadeh, Stanford University; Min Cai, Gabriel Tarasuk-Levin, and Ricardo Koller, VMware, Inc.; Tal Garfinkel; Sreekanth Setty, VMware, Inc.</li>
 <li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/mashtizadeh" target="_blank" rel="external">URL</a>]</li>
@@ -712,6 +785,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/15/SENIC-Scalable-NIC-for-End-Host-Rate-Limiting/">SENIC: Scalable NIC for End-Host Rate Limiting</a>
       </li>
     
@@ -725,10 +802,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/">Improving Server Application Performance via Pure TCP ACK Receive Optimization</a>
-      </li>
-    
-      <li>
-        <a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a>
       </li>
     
   </ul>
@@ -747,7 +820,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/networking/">networking<small>6</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>7</small></a>
+    <a href="/tags/virtualization/">virtualization<small>8</small></a>
   
 </div>
 
