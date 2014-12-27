@@ -5,18 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Lightweight Memory Tracing | My Reading List</title>
+  <title>Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines | My Reading List</title>
   <meta name="author" content="Ryousei Takano">
   
-  <meta name="description" content="Title: Lightweight Memory TracingAuthors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich2013 USENIX ATC [URL]
-
-
-The authors present me">
+  <meta name="description" content="Title: Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual MachinesAuthor: Julian Stecklina, TU Dresden2014 ACM VE">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Lightweight Memory Tracing"/>
+  <meta property="og:title" content="Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines"/>
   <meta property="og:site_name" content="My Reading List"/>
 
   
@@ -102,11 +99,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
   	<div class="inner">
       <div class="padding">
     		
-          <h1>Lightweight Memory Tracing</h1>
+          <h1>Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines</h1>
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-08T22:06:06.000Z">Dec 9 2014</time>
+              <time datetime="2014-12-27T02:01:41.000Z">Dec 27 2014</time>
             </li>
             
               <li>
@@ -136,15 +133,20 @@ body{ -webkit-animation: bugfix infinite 1s; }
       
       <div class="entry">
         
-          <p>Title: Lightweight Memory Tracing<br>Authors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/payer" target="_blank" rel="external">URL</a>]</p>
+          <p>Title: Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines<br>Author: Julian Stecklina, TU Dresden<br>2014 ACM VEE [<a href="http://vee2014.cs.technion.ac.il/program.html" target="_blank" rel="external">URL</a>]</p>
 <hr>
 <ul>
-<li>The authors present <em>memTrace</em>, a lightweight memory tracing technique that builds on dynamic on-the-fly cross-ISA binary translation of 32-bit code to 64-bit code.</li>
-<li>Current software-only memory tracing incurs high performance overhead (up to 10x for <em>libdft</em> [VEE2012], 20x for <em>Valgrind</em>’s memcheck [PLDI2007], and up to 40x for <em>taintcheck</em> [NDSS2005]).  This is because every single memory access of the application is checked by additional code (memlet) and hardware is limited to a small set of watched locations (watchpoints).</li>
-<li>MemTrace dynamically translates 32-bit x86 application code to x64 code (i.e., 64-bit code), and that enables memlets, code sequences that are woven into the target application code to execute memory tracing, to use extra registers and a huge shadow memory space (64-bit address space).</li>
-<li>The authors demonstrates two memory tracing case studies: unlimited watchpoints and safe heap memory allocator.</li>
-<li>The prototype implementation extends the <em>libdetox</em> binary translation platform [VEE2011].</li>
-<li>The source code is available from <a href="https://github.com/gannimo/memTrace" target="_blank" rel="external">gannimo/memTrace@github</a>.</li>
+<li>The authors present <em>sv3</em>, an efficient lockless userspace network switch for VMs running on unmodified Linux/KVM.</li>
+<li>The current virtualization layer (hypervisor) like QEMU/KVM is designed in a monolithic manner.  The authors apply a microkernel approach to a hypervisor design.  It contributes for minimizing Trusted Code Base (TCB).</li>
+<li>Although the Xen’s driver domain model is a similar idea, sv3 uses processes to run isolated from a hypervisor without special privileges.</li>
+<li>Linux/KVM has all the mechanisms to make a microkernel-style design possible and effective:<ul>
+<li>rights transfer via AF_LOCAL sockets</li>
+<li>efficient notifications via eventfds</li>
+<li>drivers in userspace via <a href="http://lwn.net/Articles/391459/" target="_blank" rel="external">VFIO</a> using eventfds for IRQs</li>
+<li>binding eventfds to VM exits and IRQ injection.</li>
+</ul>
+</li>
+<li>The source code of sv3 including QEMU patches is available from <a href="https://github.com/blitz/sv3" target="_blank" rel="external">here</a>.</li>
 </ul>
 
         
@@ -155,7 +157,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
   
   <div class="tags">
-    <a href="/tags/memory/">memory</a>
+    <a href="/tags/virtualization/">virtualization</a>, <a href="/tags/networking/">networking</a>
   </div>
 
           <div class="share">
@@ -186,18 +188,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
- <div class="article-prev" >
- <a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/" title="Improving Server Application Performance via Pure TCP ACK Receive Optimization">
-  <i class="fa fa-long-arrow-left"></i>
-  <span>
-  Improving Server Application Performance via Pure TCP ACK Receive Optimization</span>
-</a>
-</div>
-
 
 <div class="article-next">
-<a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/"  title="ClickOS and the Art of Network Function Virtualization">
- <span>ClickOS and the Art of Network Function Virtualization
+<a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/"  title="XvMotion: Unified Virtual Machine Migration over Long Distance">
+ <span>XvMotion: Unified Virtual Machine Migration over Long Distance
 </span>
 <i class="fa fa-long-arrow-right"></i>
 </a>

@@ -118,6 +118,76 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/">Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-27T02:01:41.000Z">Dec 27 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines<br>Author: Julian Stecklina, TU Dresden<br>2014 ACM VEE [<a href="http://vee2014.cs.technion.ac.il/program.html" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>sv3</em>, an efficient lockless userspace network switch for VMs running on unmodified Linux/KVM.</li>
+<li>The current virtualization layer (hypervisor) like QEMU/KVM is designed in a monolithic manner.  The authors apply a microkernel approach to a hypervisor design.  It contributes for minimizing Trusted Code Base (TCB).</li>
+<li>Although the Xen’s driver domain model is a similar idea, sv3 uses processes to run isolated from a hypervisor without special privileges.</li>
+<li>Linux/KVM has all the mechanisms to make a microkernel-style design possible and effective:<ul>
+<li>rights transfer via AF_LOCAL sockets</li>
+<li>efficient notifications via eventfds</li>
+<li>drivers in userspace via <a href="http://lwn.net/Articles/391459/" target="_blank" rel="external">VFIO</a> using eventfds for IRQs</li>
+<li>binding eventfds to VM exits and IRQ injection.</li>
+</ul>
+</li>
+<li>The source code of sv3 including QEMU patches is available from <a href="https://github.com/blitz/sv3" target="_blank" rel="external">here</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a></h1>
     
   
@@ -722,81 +792,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
   
-    <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-04T23:54:03.000Z">Dec 5 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems<br>Authors: EunYoung Jeong, Shinae Woo, Muhammad Jamshed, and Haewon Jeong, Korea Advanced Institute of Science and Technology (KAIST); Sunghwan Ihm, Princeton University; Dongsu Han and KyoungSoo Park, Korea Advanced Institute of Science and Technology (KAIST)<br>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/jeong" target="_blank" rel="external">URL</a>] (<strong>Community award</strong>)<br>Reference:</p>
-<ul>
-<li><a href="http://shader.kaist.edu/mtcp/" target="_blank" rel="external">mTCP</a> (KAIST)</li>
-</ul>
-<hr>
-<ul>
-<li>The authors presents <em>mTCP</em>, a highly scalable user-level TCP stack for multicore systems.</li>
-<li>Large flows are easy to fill up 10 Gbps. But, small flows are hard to fill up 10 Gbps regardless of the number of CPU cores.  This is because the Linux kernel is not designed for multicore systems.  In a web server case, 83% of CPU usage spent inside kernel.</li>
-<li>Several proposals for improving in-kernel TCP performance, including <em>affinity accept</em> [EuroSys2012], <em>MegaPipe</em> [OSDI2012], and <em>FlexSC</em> [OSDI2010], however, they are not sufficient.  As another approach, mTCP, <em>SolarFlare <a href="http://www.openonload.org/" target="_blank" rel="external">OpenOnload</a></em> and <em>Sandstorm</em> [SIGCOMM2014] run the entire network stack in the userspace to eliminate kernel crossing overheads and optimize packet processing without kernel modifications.</li>
-<li>mTCP makes full use of extreme parallelism and batch processing:<ul>
-<li>Per-core resource management (listening queue, file descriptor, packet queue)</li>
-<li>Lock-free data structures and cache-aware threading</li>
-<li>Eliminate system call overhead</li>
-<li>Reduce context switch cost by event batching</li>
-<li>Easily portable APIs for compatibility (similar to BSD socket API)</li>
-</ul>
-</li>
-<li>This group has proposed <em>PacketShader</em>, GPU-accelerated software router in the ACM SIGCOMM 2010.  As a part of mTCP (user-level pacekt I/O library), they extend PacketShader I/O engine (PSIO) to support an efficient event-driven packet I/O interface.  Other user-level packet I/O engines have been proposed, including <em>Intel DPDK</em> and <em><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap</a></em> [USENIX2012].</li>
-<li>The source code is available from <a href="https://github.com/eunyoung14/mtcp" target="_blank" rel="external">eunyoung14@github</a>.</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-  
 
   <nav id="pagination">
   
@@ -825,6 +820,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/">Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a>
       </li>
     
@@ -840,10 +839,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
         <a href="/2014/12/12/Software-Techniques-for-Avoiding-Hardware-Virtualization-Exits/">Software Techniques for Avoiding Hardware Virtualization Exits</a>
       </li>
     
-      <li>
-        <a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/">Improving Server Application Performance via Pure TCP ACK Receive Optimization</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -856,11 +851,13 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/kernel/">kernel<small>1</small></a>
   
+    <a href="/tags/list/">list<small>1</small></a>
+  
     <a href="/tags/memory/">memory<small>2</small></a>
   
-    <a href="/tags/networking/">networking<small>6</small></a>
+    <a href="/tags/networking/">networking<small>7</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>8</small></a>
+    <a href="/tags/virtualization/">virtualization<small>9</small></a>
   
 </div>
 

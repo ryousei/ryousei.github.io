@@ -118,6 +118,76 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/">Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-27T02:01:41.000Z">Dec 27 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines<br>Author: Julian Stecklina, TU Dresden<br>2014 ACM VEE [<a href="http://vee2014.cs.technion.ac.il/program.html" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>sv3</em>, an efficient lockless userspace network switch for VMs running on unmodified Linux/KVM.</li>
+<li>The current virtualization layer (hypervisor) like QEMU/KVM is designed in a monolithic manner.  The authors apply a microkernel approach to a hypervisor design.  It contributes for minimizing Trusted Code Base (TCB).</li>
+<li>Although the Xen’s driver domain model is a similar idea, sv3 uses processes to run isolated from a hypervisor without special privileges.</li>
+<li>Linux/KVM has all the mechanisms to make a microkernel-style design possible and effective:<ul>
+<li>rights transfer via AF_LOCAL sockets</li>
+<li>efficient notifications via eventfds</li>
+<li>drivers in userspace via <a href="http://lwn.net/Articles/391459/" target="_blank" rel="external">VFIO</a> using eventfds for IRQs</li>
+<li>binding eventfds to VM exits and IRQ injection.</li>
+</ul>
+</li>
+<li>The source code of sv3 including QEMU patches is available from <a href="https://github.com/blitz/sv3" target="_blank" rel="external">here</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a></h1>
     
   
@@ -689,6 +759,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/">Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a>
       </li>
     
@@ -704,10 +778,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
         <a href="/2014/12/12/Software-Techniques-for-Avoiding-Hardware-Virtualization-Exits/">Software Techniques for Avoiding Hardware Virtualization Exits</a>
       </li>
     
-      <li>
-        <a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/">Improving Server Application Performance via Pure TCP ACK Receive Optimization</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -720,11 +790,13 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/kernel/">kernel<small>1</small></a>
   
+    <a href="/tags/list/">list<small>1</small></a>
+  
     <a href="/tags/memory/">memory<small>2</small></a>
   
-    <a href="/tags/networking/">networking<small>6</small></a>
+    <a href="/tags/networking/">networking<small>7</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>8</small></a>
+    <a href="/tags/virtualization/">virtualization<small>9</small></a>
   
 </div>
 
