@@ -118,6 +118,68 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/">Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-29T05:50:10.000Z">Dec 29 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects<br>Authors: Zheng Cui, Patrick G. Bridges (University of New Mexico), John R. Lange (University of Pittsburgh), Peter A. Dinda (Northwestern University)<br>2013 ACM HPDC [<a href="http://www.hpdc.org/2013/program/conference-program/" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present a virtual TCP offload Ethernet device, which enables the overlay system to leverage the semantics and performance characteristics of the underlying network to maximize overlay performance.</li>
+<li>The authors implemented this approach by enhancing the <em>VNET/P</em> virtual network overlay [HPDC2012] with offload device capabilities (VTOEs) and running it on top of a high-performance InfiniBand network fabric.</li>
+<li>VNET/P is an in-VMM, overlay-based layer-2 virtual networking system for the <em>Palacios</em> VMM [IPDPS2010].</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/28/Mortar-Filling-the-Gaps-in-Data-Center-Memory/">Mortar: Filling the Gaps in Data Center Memory</a></h1>
     
   
@@ -722,83 +784,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
   
-    <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/01/Efﬁcient-and-Scalable-Paravirtual-I-O-System/">Efficient and Scalable Paravirtual I/O System</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-01T09:21:04.000Z">Dec 1 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: Efficient and Scalable Paravirtual I/O System<br>Authors: Nadav Har’El, Abel Gordon, and Alex Landau, IBM Research–Haifa; Muli Ben-Yehuda, Technion IIT and Hypervisor Consulting; Avishay Traeger and Razya Ladelsky, IBM Research–Haifa<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/har%E2%80%99el" target="_blank" rel="external">URL</a>]<br>Reference:</p>
-<ul>
-<li><a href="https://github.com/abelg/virtual_io_acceleration/wiki/Virtual-I-O-acceleration-technologies-for-KVM" target="_blank" rel="external">Virtual I O acceleration technologies for KVM</a> (Abel Gorden@github)</li>
-</ul>
-<hr>
-<ul>
-<li>The authors proposes a novel para-virtual I/O mechanism, <em>ELVIS (Efficient and scaLable paraVirtual I/O System)</em>.<ul>
-<li>Fine-grained I/O scheduling (instead of thread-based I/O scheduling): a single I/O thread runs on a dedicated I/O core, and handles I/O requests of multiple VMs.</li>
-<li>Exitless I/O request notification: polling in host’s I/O core</li>
-<li>Exitless I/O reply notification: using ELI</li>
-</ul>
-</li>
-<li>They implemented ELVIS in KVM/vhost, and demonstrated the performance of I/O intensive applications comparing to the unmodified KVM with vhost and SR-IOV+ELI.</li>
-<li><em>ELI (Exit-Less Interruption)</em> is their previous work [ASPLOS2012], and improves interrupt virtualization efficiency.  In this paper, they emulate <em>posted interrupts</em>, which is a new feature announced for future x86 processors, by using ELI.<ul>
-<li><a href="http://events.linuxfoundation.org/sites/events/files/slides/VT-d%20Posted%20Interrupts-final%20.pdf" target="_blank" rel="external">VT-d Posted Interrupts</a></li>
-<li><a href="http://lwn.net/Articles/619691/" target="_blank" rel="external">Add VT-d Posted-Interrupts support for KVM</a> (LWN)</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/01/Efﬁcient-and-Scalable-Paravirtual-I-O-System/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-  
 
   <nav id="pagination">
   
+  
+    <a href="/tags/virtualization/page/2/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav>
@@ -822,6 +812,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/">Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects</a>
+      </li>
+    
+      <li>
         <a href="/2014/12/28/Mortar-Filling-the-Gaps-in-Data-Center-Memory/">Mortar: Filling the Gaps in Data Center Memory</a>
       </li>
     
@@ -835,10 +829,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2014/12/15/SENIC-Scalable-NIC-for-End-Host-Rate-Limiting/">SENIC: Scalable NIC for End-Host Rate Limiting</a>
-      </li>
-    
-      <li>
-        <a href="/2014/12/13/Software-Persistent-Memory/">Software Persistent Memory</a>
       </li>
     
   </ul>
@@ -857,9 +847,9 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/memory/">memory<small>3</small></a>
   
-    <a href="/tags/networking/">networking<small>7</small></a>
+    <a href="/tags/networking/">networking<small>8</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>10</small></a>
+    <a href="/tags/virtualization/">virtualization<small>11</small></a>
   
 </div>
 
