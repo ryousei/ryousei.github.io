@@ -150,7 +150,8 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <ul>
 <li>The authors present a virtual TCP offload Ethernet device, which enables the overlay system to leverage the semantics and performance characteristics of the underlying network to maximize overlay performance.</li>
 <li>The authors implemented this approach by enhancing the <em>VNET/P</em> virtual network overlay [HPDC2012] with offload device capabilities (VTOEs) and running it on top of a high-performance InfiniBand network fabric.</li>
-<li>VNET/P is an in-VMM, overlay-based layer-2 virtual networking system for the <em>Palacios</em> VMM [IPDPS2010].</li>
+<li>To bridge the semantic gap, it uses minimal interconnect features, and translates the advanced features to a simple Ethernet interface while hiding them from the guest OS.</li>
+<li>VNET/P is an in-VMM, overlay-based layer-2 virtual networking system for the <em>Palacios</em> VMM [IPDPS2010].  Their previous work [<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6468468&amp;punumber%3D6468170%26sortType%3Dasc_p_Sequence%26filter%3DAND%28p_IS_Number%3A6468439%29%26pageNumber%3D2" target="_blank" rel="external">SC2012</a>] shows that this model provides near-native MPI performance on a high-performance underlying Ethernet network, by using optimistic interrupts and zero-copy cut-through data forwarding (<a href="http://www.slideshare.net/oraccha/optimizing-overlaybased-virtual-networking-through-optimistic-interrupts-and-cutthrough-forwarding" target="_blank" rel="external">Related slides</a>).  However, it is unable to deliver near-native network performance on InfiniBand due to the semantic gap between the virtual overlay and underlying networks.</li>
 </ul>
 
           
