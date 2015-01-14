@@ -114,6 +114,541 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/28/Mortar-Filling-the-Gaps-in-Data-Center-Memory/">Mortar: Filling the Gaps in Data Center Memory</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-28T00:38:54.000Z">Dec 28 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Mortar: Filling the Gaps in Data Center Memory<br>Authors: Jinho Hwang (IBM T.J. Watson Research Center), Ahsen J. Uppal, Timothy Wood, H. Howie Huang (George Washington University)<br>2014 ACM VEE [<a href="http://vee2014.cs.technion.ac.il/program.html" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>Mortar</em>, a hypervisor managed cache system for repurposing spare system memory over data center resources.</li>
+<li>Data center servers are typically overprovisioned to handle unpredictable workload bursts, average 30% of memory is idle from GWU commercial data center.  And also application-level distributed cache, e.g., memcached, is heavily used in data centers.</li>
+<li>A hypervisor maintains a list of spare memory that can be allocated to VMs on demand.  Mortar provides a new Linux system call and a Xen hypercall which together provide the interface to a key-value store.</li>
+<li>The source code is available from <a href="https://github.com/gwcloudlab/mortar" target="_blank" rel="external">here</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/28/Mortar-Filling-the-Gaps-in-Data-Center-Memory/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/">Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-27T02:01:41.000Z">Dec 27 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines<br>Author: Julian Stecklina, TU Dresden<br>2014 ACM VEE [<a href="http://vee2014.cs.technion.ac.il/program.html" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>sv3</em>, an efficient lockless userspace network switch for VMs running on unmodified Linux/KVM.</li>
+<li>The current virtualization layer (hypervisor) like QEMU/KVM is designed in a monolithic manner.  The authors apply a microkernel approach to a hypervisor design.  It contributes for minimizing Trusted Code Base (TCB).</li>
+<li>Although the Xen’s driver domain model is a similar idea, sv3 uses processes to run isolated from a hypervisor without special privileges.</li>
+<li>Linux/KVM has all the mechanisms to make a microkernel-style design possible and effective:<ul>
+<li>rights transfer via AF_LOCAL sockets</li>
+<li>efficient notifications via eventfds</li>
+<li>drivers in userspace via <a href="http://lwn.net/Articles/391459/" target="_blank" rel="external">VFIO</a> using eventfds for IRQs</li>
+<li>binding eventfds to VM exits and IRQ injection.</li>
+</ul>
+</li>
+<li>The source code of sv3 including QEMU patches is available from <a href="https://github.com/blitz/sv3" target="_blank" rel="external">here</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-21T14:15:07.000Z">Dec 21 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: XvMotion: Unified Virtual Machine Migration over Long Distance<br>Authors: Ali José Mashtizadeh, Stanford University; Min Cai, Gabriel Tarasuk-Levin, and Ricardo Koller, VMware, Inc.; Tal Garfinkel; Sreekanth Setty, VMware, Inc.<br>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/mashtizadeh" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>XvMotion</em>, an unified memory and storage migration over the local and wide area networks.</li>
+<li>Wide are memory migration<ul>
+<li>Problem: Applications can change memory faster than network bandwidth.</li>
+<li>Solution: Stun During Page Send (SDPS) throttles a VM just enough to keep the dirty rate is less than the network transmit rate.</li>
+</ul>
+</li>
+<li>Wide area storage migration<ul>
+<li>Problem: Synchronous mirroring over the WAN slows guest workload.</li>
+<li>Solution Asynchronous IO mirroring and throttling copy process and workload as necessary.</li>
+</ul>
+</li>
+<li>The authors also show several IO optimization techniques including TCP extensions.</li>
+<li>XvMotion is built on the live migration and IO mirroring mechanisms in the VMWare ESX.</li>
+<li>The authors demonstrated that VM migration between California to India (1 Gbps network with 214 ms RTT) is practical.  The workload penalty from throttling is about 10%.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2014/12/15/SENIC-Scalable-NIC-for-End-Host-Rate-Limiting/">SENIC: Scalable NIC for End-Host Rate Limiting</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-15T12:52:18.000Z">Dec 15 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: SENIC: Scalable NIC for End-Host Rate Limiting<br>Authors: Sivasankar Radhakrishnan, University of California, San Diego; Yilong Geng and Vimalkumar Jeyakumar, Stanford University; Abdul Kabbani, Google Inc.; George Porter, University of California, San Diego; Amin Vahdat, Google Inc. and University of California, San Diego<br>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/radhakrishnan" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>SENIC</em>, a scalable rate limiting NIC design that can support tens of thousands of rate limiters per server.</li>
+<li>Network resource managers, including <em>Seawall</em> [HotCloud2010], <em>Oktopus</em> [SIGCOMM2011], and <em>EyeQ</em> [NSDI2013], require programmable rate limiters.</li>
+<li>SENIC removes TX ring buffers from a NIC, because SRAM is expensive and limited.  The SENIC prototype is implemented on NetFPGA 10G, with 1000 rate limiters requiring just only 30KB SRAM.</li>
+<li>The source code is available from <a href="http://jvimal.github.io/senic/" target="_blank" rel="external">here</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/15/SENIC-Scalable-NIC-for-End-Host-Rate-Limiting/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2014/12/13/Software-Persistent-Memory/">Software Persistent Memory</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-13T03:04:11.000Z">Dec 13 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Software Persistent Memory<br>Authors: Jorge Guerra, Leonardo Mármol, Daniel Campello, Carlos Crespo, Raju Rangaswami, and Jinpeng Wei, Florida International University<br>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/guerra" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>Software Persistent Memory (SoftPM)</em>, a lightweight persistent memory abstraction for C.</li>
+<li>SoftPM automatically discovers persistent data dependencies from the user-defined root structure.  In the following example code, <em>cid</em> is a root structure.</li>
+</ul>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> l {</div><div class="line">	<span class="keyword">int</span> v;</div><div class="line">	<span class="keyword">struct</span> l *next;</div><div class="line">} <span class="built_in">list</span>;</div><div class="line"></div><div class="line"><span class="keyword">struct</span> pcont {</div><div class="line">	<span class="built_in">list</span> *head;</div><div class="line">} *C;</div><div class="line"></div><div class="line">foo() {</div><div class="line">	cid = pCAlloc(&C, <span class="keyword">sizeof</span>(*C)); <span class="comment">/* create a new container */</span></div><div class="line">	<span class="built_in">list</span> *n1 = <span class="built_in">malloc</span>(...);</div><div class="line">	C-&gt;head = n1;</div><div class="line">	n1-&gt;v = X;</div><div class="line">	<span class="built_in">list</span> *n2 = <span class="built_in">malloc</span>(...);</div><div class="line">	n2-&gt;v = Y;</div><div class="line">	n1-&gt;next = n2;</div><div class="line">	:</div><div class="line">	pPoint(cid); <span class="comment">/* create a persistent point asynchronously */</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<ul>
+<li>There are a lot of persistent memory libraries (<em>RVM</em>, <em>SSDAlloc</em>, <em>NV-Heep</em>, <em>Mnemosyne</em>) and persistent object stores (<em>ObjectStore</em>, <em>Thor</em>). <em>Mnemosyne</em> [ASPLOS2011] and <em>NV-Heaps</em> [ASPLOS2011] also provide a persistent memory abstractions similar to SoftPM, however, they are explicitly designed for byte addressable non-volatile memories.  Some operating systems, e.g., <em>Grasshopper</em> [ComputerSystems1994], support a single level persistent store in which pointer swizzling is employed to convert persistent store references to in-memory addresses at the page granularity.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/13/Software-Persistent-Memory/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2014/12/12/Software-Techniques-for-Avoiding-Hardware-Virtualization-Exits/">Software Techniques for Avoiding Hardware Virtualization Exits</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-12T00:00:51.000Z">Dec 12 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Software Techniques for Avoiding Hardware Virtualization Exits<br>Authors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware<br>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/agesen" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present a set of software-based optimization techniques to eliminate VM exits.</li>
+<li>Hardware-assisted x86 virtualization suffers from expensive VM exits, which cause guest OS/VMM transitions.  To reduce the overhead, the binary translator detects cluster/pair of instructions, which generate multiple VM exits, and translates them together to avoid VM exits.  It is also useful for a nested VM environment.</li>
+<li>For example, the following code updates page table entry.  Each write causes a VM exit, and VMM updates a shadow page table entry.  Using the proposed technique, VMM inspects the next instruction at the first exit, and executes both instruction at once.</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">mov</span> <span class="number">4</span>(%<span class="number">ecx</span>), %<span class="literal">esi</span></div><div class="line"><span class="keyword">mov</span> (%<span class="number">ecx</span>), %<span class="number">ebx</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>The proposed technique has been implemented in VMWare products (Workstation, Fusion, ESX) and validated by years of use in the field.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/12/Software-Techniques-for-Avoiding-Hardware-Virtualization-Exits/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/">Improving Server Application Performance via Pure TCP ACK Receive Optimization</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-09T22:37:26.000Z">Dec 10 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Improving Server Application Performance via Pure TCP ACK Receive Optimization<br>Authors: Michael Chan and David R. Cheriton, Stanford University<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/chan" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>TCP-PARO</em>, (Pure ACK Receive Optimization), that removes the bulk of expensive per-packet processing and provides a fast processing path of pure ACKs in the network stack (bypasses the original stack).<ul>
+<li>Pure ACK parsing and demultiplexing</li>
+<li>ACK processing fast module</li>
+<li>Handling a mixture of pure ACKs and other TCP segments</li>
+</ul>
+</li>
+<li>The authors show that ACK receive processing can consume up to 20% CPU cycles in a Web server.  Using this technique, they demonstrate cycles savings of 15%, and 33% throughput improvement in reliable multicast, <em>TCP-SMO</em> [INFOCOM2002].</li>
+<li>While some batching optimization have been proposed to amortize receive-side overhead for data packet, they are not suitable for small control packets like ACKs.</li>
+<li>By the way, the last author is famous as his work, <em>V operating system</em>, in 80s.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
+      <h1 class="title transition"><a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-08T22:06:06.000Z">Dec 9 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Lightweight Memory Tracing<br>Authors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/payer" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present <em>memTrace</em>, a lightweight memory tracing technique that builds on dynamic on-the-fly cross-ISA binary translation of 32-bit code to 64-bit code.</li>
+<li>Current software-only memory tracing incurs high performance overhead (up to 10x for <em>libdft</em> [VEE2012], 20x for <em>Valgrind</em>’s memcheck [PLDI2007], and up to 40x for <em>taintcheck</em> [NDSS2005]).  This is because every single memory access of the application is checked by additional code (memlet) and hardware is limited to a small set of watched locations (watchpoints).</li>
+<li>MemTrace dynamically translates 32-bit x86 application code to x64 code (i.e., 64-bit code), and that enables memlets, code sequences that are woven into the target application code to execute memory tracing, to use extra registers and a huge shadow memory space (64-bit address space).</li>
+<li>The authors demonstrates two memory tracing case studies: unlimited watchpoints and safe heap memory allocator.</li>
+<li>The prototype implementation extends the <em>libdetox</em> binary translation platform [VEE2011].</li>
+<li>The source code is available from <a href="https://github.com/gannimo/memTrace" target="_blank" rel="external">gannimo/memTrace@github</a>.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/09/Lightweight-Memory-Tracing/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a></h1>
     
   
@@ -239,894 +774,13 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
 
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap: a novel framework for fast packet I/O</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-06T06:37:33.000Z">Dec 6 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: netmap: A Novel Framework for Fast Packet I/O<br>Authors: Luigi Rizzo, Università di Pisa, Italy<br>2012 USENIX ATC [<a href="https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/rizzo" target="_blank" rel="external">URL</a>] (<strong>Best paper award</strong>)<br>Reference:</p>
-<ul>
-<li><a href="http://info.iet.unipi.it/~luigi/netmap/" target="_blank" rel="external">The netmap project</a> (Università di Pisa)</li>
-</ul>
-<hr>
-<ul>
-<li>The author presents <em>netmap</em>, a novel framework that enables commodity operating systems to handle the millions of packets per second (pps), without requiring custom hardwares and changes to applications.</li>
-<li>In order to build network applications like network monitors and packet generators, UNIX provides raw packet I/O APIs, e.g., Berkeley Packet Filter (BPF) and AF_SOCKET, however, the performance is inadequate for the millions of pps on a 10 gigabit link.</li>
-<li>netmap integrates some well-known existing ideas into commodity OSs to reduce the cost of moving traffic between the NIC and the network stack.  For example, NetChannels is a similar idea, and it is employed in <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv</a> [USENIX2014].<ul>
-<li>per-packet dynamic memory allocations, removed by preallocating resources</li>
-<li>system call overheads, amortized over large batches</li>
-<li>memory copies, eliminated by sharing buffers and metadata between kernel and userspace</li>
-</ul>
-</li>
-<li>The following snippet is an example code of packet generator using netmap API.</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">fds.fd = open(<span class="string">"/dev/netmap"</span>, O_RDWR);</div><div class="line"><span class="built_in">strcpy</span>(nmr.nm_name, <span class="string">"ix0"</span>);</div><div class="line">ioctl(fds.fd, NIOCREG, &nmr);</div><div class="line">p = mmap(<span class="number">0</span>, nmr.memsize, fds.fd);</div><div class="line">nifp = NETMAP_IF(p, nmr.offset);</div><div class="line">fds.events = POLLOUT;</div><div class="line"><span class="keyword">for</span> (;;) {</div><div class="line">    poll(fds, <span class="number">1</span>, -<span class="number">1</span>);</div><div class="line">    <span class="keyword">for</span> (r = <span class="number">0</span>; r &lt; nmr.num_queues; r++) {</div><div class="line">        ring = NETMAP_TXRING(nifp, r);</div><div class="line">        <span class="keyword">while</span> (ring-&gt;avail-- &gt; <span class="number">0</span>) {</div><div class="line">            i = ring-&gt;cur;</div><div class="line">            buf = NETMAP_BUF(ring, ring-&gt;slot[i].buf_index);</div><div class="line">            ... store the payload into buf ...</div><div class="line">            ring-&gt;slot[i].len = ... <span class="comment">// set packet length</span></div><div class="line">            ring-&gt;cur = NETMAP_NEXT(ring, i);</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
-
-<ul>
-<li>netmap is orthogonal to hardware offloading (checksum, TSO, LRO) and virtualization (VMDc, SR-IOV) mechanisms.  The authors have been proposed a netmap-based software switch, <em>VALE</em> [CoNEXT2012] [ANCS2013].</li>
-<li>netmap has been implemented in FreeBSD and Linux.  The recent FreeBSD has already included it, and also the latest implementation is available from <a href="https://code.google.com/p/netmap/" target="_blank" rel="external">Google code page</a>.</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-04T23:54:03.000Z">Dec 5 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems<br>Authors: EunYoung Jeong, Shinae Woo, Muhammad Jamshed, and Haewon Jeong, Korea Advanced Institute of Science and Technology (KAIST); Sunghwan Ihm, Princeton University; Dongsu Han and KyoungSoo Park, Korea Advanced Institute of Science and Technology (KAIST)<br>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/jeong" target="_blank" rel="external">URL</a>] (<strong>Community award</strong>)<br>Reference:</p>
-<ul>
-<li><a href="http://shader.kaist.edu/mtcp/" target="_blank" rel="external">mTCP</a> (KAIST)</li>
-</ul>
-<hr>
-<ul>
-<li>The authors presents <em>mTCP</em>, a highly scalable user-level TCP stack for multicore systems.</li>
-<li>Large flows are easy to fill up 10 Gbps. But, small flows are hard to fill up 10 Gbps regardless of the number of CPU cores.  This is because the Linux kernel is not designed for multicore systems.  In a web server case, 83% of CPU usage spent inside kernel.</li>
-<li>Several proposals for improving in-kernel TCP performance, including <em>affinity accept</em> [EuroSys2012], <em>MegaPipe</em> [OSDI2012], and <em>FlexSC</em> [OSDI2010], however, they are not sufficient.  As another approach, mTCP, <em>SolarFlare <a href="http://www.openonload.org/" target="_blank" rel="external">OpenOnload</a></em> and <em>Sandstorm</em> [SIGCOMM2014] run the entire network stack in the userspace to eliminate kernel crossing overheads and optimize packet processing without kernel modifications.</li>
-<li>mTCP makes full use of extreme parallelism and batch processing:<ul>
-<li>Per-core resource management (listening queue, file descriptor, packet queue)</li>
-<li>Lock-free data structures and cache-aware threading</li>
-<li>Eliminate system call overhead</li>
-<li>Reduce context switch cost by event batching</li>
-<li>Easily portable APIs for compatibility (similar to BSD socket API)</li>
-</ul>
-</li>
-<li>This group has proposed <em>PacketShader</em>, GPU-accelerated software router in the ACM SIGCOMM 2010.  As a part of mTCP (user-level pacekt I/O library), they extend PacketShader I/O engine (PSIO) to support an efficient event-driven packet I/O interface.  Other user-level packet I/O engines have been proposed, including <em>Intel DPDK</em> and <em><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap</a></em> [USENIX2012].</li>
-<li>The source code is available from <a href="https://github.com/eunyoung14/mtcp" target="_blank" rel="external">eunyoung14@github</a>.</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-04T06:03:15.000Z">Dec 4 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: OSv - Optimizing the Operating System for Virtual Machines<br>Authors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, and Vlad Zolotarov, Cloudius Systems<br>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]<br>Reference:</p>
-<ul>
-<li><a href="http://osv.io/" target="_blank" rel="external">OSv - the operating system designed for the cloud</a></li>
-</ul>
-<hr>
-<ul>
-<li>The authors present OSv, a new guest operating system designed specifically for running a single application on a virtual machine in the cloud.  The first author is famous as the father of the KVM hypervisor and a founder at Cloudius Systems.</li>
-<li>OSv follows the library OS design, proposed by <em>exokernel</em> in 1990s.  In OSv case, a hyperviosr replaces the role of exokernel.</li>
-<li>OSv has been developed from scratch.  The code is written in C++11.<ul>
-<li>Single address space: all application thread and kernel use the same page tables.</li>
-<li>No spinlocks.</li>
-<li>Thread scheduler: lock-free, preemptive, tick-less, fair, scalable, and efficient</li>
-<li>Network channels: employ Van Jacobson’s net channel idea to reduce contentions between an application thread context and an interrupt context.</li>
-<li>Beyond Linux API: shrinker, JVM balloon</li>
-</ul>
-</li>
-<li>It originally supports only Java applications, and now applications written in Lua, Ruby, and so on, run on OSv.  Some guest OSs focus on running only a single high-level language. For example, Erlang on Xen, Mirage OS (OCaml) [ASPLOS2013], and Libra (J9 JVM).</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/">Hyper-Switch: A Scalable Software Virtual Switching Architecture</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-02T22:41:23.000Z">Dec 3 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: Hyper-Switch: A Scalable Software Virtual Switching Architecture<br>Authors: Kaushik Kumar Ram, Alan L. Cox, Mehul Chadha, and Scott Rixner, Rice University<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/ram" target="_blank" rel="external">URL</a>]</p>
-<hr>
-<ul>
-<li>This paper presents <em>Hyper-Switch</em>, a efficient and scalable software-based switch, and several optimization techniques, including preemptive packet copying, batching hypervisor entries, and offloading packet processing.</li>
-<li>Benson et al. reports that 80% of the traffic originating at servers in cloud data centers never leaves the rack [IMC2010].  Also the number of CPU cores in a server will grow continuously.  These implies that the role of vSwich becomes much more crucial.  Hyper-Switch focuses on the performance problem of the last hop in a virtualized data center.</li>
-<li>The prototype is implemented based on Open vSwitch under the Xen 4.2 platform.  The authors have ported essential parts of Open vSwitch’s datapath (from the driver domain) to the Xen hypervisor.</li>
-<li>The experimental results show the advantage over unmodified Xen and KVM with vhost-net.</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/02/vTurbo-Accelerating-Virtual-Machine-I-O-Processing-Using-Designated-Turbo-Sliced-Core/">vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-01T23:47:31.000Z">Dec 2 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core<br>Authors: Cong Xu, Sahan Gamage, Hui Lu, Ramana Kompella, and Dongyan Xu, Purdue University<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/xu" target="_blank" rel="external">URL</a>]<br>Reference:</p>
-<ul>
-<li><a href="http://friends.cs.purdue.edu/dokuwiki/doku.php?id=vsnoop" target="_blank" rel="external">Improving VM Network I/O Performance</a> (Purdue Univ.)<ul>
-<li>vSnoop, vFlood, vSlicer, vPipe, …</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li>The authors present <em>vTurbo</em>, a system that offloads I/O processing for VMs to a designated core with small scheduling time-slice.  It enables us to reduce both VM scheduling latency and low I/O IRQ latency.</li>
-<li>This system divides CPU cores into regular cores (normal CPU time-slice, e.g., 30ms) and <em>turbo cores</em> (small CPU time-slice, e.g., 0.1ms).  I/O processing for VMs is assigned to one or more turbo core(s).  A turbo vCPU of each VM is pinned to the corresponding turbo core.</li>
-<li>The prototype is implemented based on Xen 4.1.2.</li>
-<li>For improving TCP performance, it uses a technique similar to their previous work, <em>vSnoop</em> [SC2010], that offloads ACK processing from a guest OS to the hypervisor.  Such a hypervisor intervention is similar to this work.</li>
-<li>The problem statement is similar to <a href="/2014/12/01/Ef%EF%AC%81cient-and-Scalable-Paravirtual-I-O-System/">ELVIS</a> [USENIX2013], but ELVIS uses polling instead of thread scheduling.</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/02/vTurbo-Accelerating-Virtual-Machine-I-O-Processing-Using-Designated-Turbo-Sliced-Core/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/01/Efﬁcient-and-Scalable-Paravirtual-I-O-System/">Efficient and Scalable Paravirtual I/O System</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-01T09:21:04.000Z">Dec 1 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: Efficient and Scalable Paravirtual I/O System<br>Authors: Nadav Har’El, Abel Gordon, and Alex Landau, IBM Research–Haifa; Muli Ben-Yehuda, Technion IIT and Hypervisor Consulting; Avishay Traeger and Razya Ladelsky, IBM Research–Haifa<br>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/har%E2%80%99el" target="_blank" rel="external">URL</a>]<br>Reference:</p>
-<ul>
-<li><a href="https://github.com/abelg/virtual_io_acceleration/wiki/Virtual-I-O-acceleration-technologies-for-KVM" target="_blank" rel="external">Virtual I O acceleration technologies for KVM</a> (Abel Gorden@github)</li>
-</ul>
-<hr>
-<ul>
-<li>The authors proposes a novel para-virtual I/O mechanism, <em>ELVIS (Efficient and scaLable paraVirtual I/O System)</em>.<ul>
-<li>Fine-grained I/O scheduling (instead of thread-based I/O scheduling): a single I/O thread runs on a dedicated I/O core, and handles I/O requests of multiple VMs.</li>
-<li>Exitless I/O request notification: polling in host’s I/O core</li>
-<li>Exitless I/O reply notification: using ELI</li>
-</ul>
-</li>
-<li>They implemented ELVIS in KVM/vhost, and demonstrated the performance of I/O intensive applications comparing to the unmodified KVM with vhost and SR-IOV+ELI.</li>
-<li><em>ELI (Exit-Less Interruption)</em> is their previous work [ASPLOS2012], and improves interrupt virtualization efficiency.  In this paper, they emulate <em>posted interrupts</em>, which is a new feature announced for future x86 processors, by using ELI.<ul>
-<li><a href="http://events.linuxfoundation.org/sites/events/files/slides/VT-d%20Posted%20Interrupts-final%20.pdf" target="_blank" rel="external">VT-d Posted Interrupts</a></li>
-<li><a href="http://lwn.net/Articles/619691/" target="_blank" rel="external">Add VT-d Posted-Interrupts support for KVM</a> (LWN)</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/01/Efﬁcient-and-Scalable-Paravirtual-I-O-System/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/11/30/TODO-list/">TODO list</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-11-30T13:17:54.000Z">Nov 30 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <h2 id="2012_USENIX_ATC">2012 USENIX ATC</h2>
-<ol>
-<li><p><a href="/2014/12/06/netmap-a-novel-framework-for-fast-packet-I-O/">netmap: A Novel Framework for Fast Packet I/O</a></p>
-<ul>
-<li>Authors: Luigi Rizzo, Università di Pisa, Italy</li>
-<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/rizzo" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/12/Software-Techniques-for-Avoiding-Hardware-Virtualization-Exits/">Software Techniques for Avoiding Hardware Virtualization Exits</a></p>
-<ul>
-<li>Authors: Ole Agesen, Jim Mattson, Radu Rugina, and Jeffrey Sheldon, VMware</li>
-<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/agesen" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/13/Software-Persistent-Memory/">Software Persistent Memory</a></p>
-<ul>
-<li>Authors: Jorge Guerra, Leonardo Mármol, Daniel Campello, Carlos Crespo, Raju Rangaswami, and Jinpeng Wei, Florida International University</li>
-<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/guerra" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Gdev: First-Class GPU Resource Management in the Operating System</p>
-<ul>
-<li>Authors: Shinpei Kato, Michael McThrow, Carlos Maltzahn, and Scott Brandt, UC Santa Cruz</li>
-<li>2012 USENIX ATC [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/kato" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2013_USENIX_ATC">2013 USENIX ATC</h2>
-<ol>
-<li><p><a href="/2014/12/01/Ef%EF%AC%81cient-and-Scalable-Paravirtual-I-O-System/">Efficient and Scalable Paravirtual I/O System</a></p>
-<ul>
-<li>Authors: Nadav Har’El, Abel Gordon, and Alex Landau, IBM Research–Haifa; Muli Ben-Yehuda, Technion IIT and Hypervisor Consulting; Avishay Traeger and Razya Ladelsky, IBM Research–Haifa</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/har%E2%80%99el" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/02/vTurbo-Accelerating-Virtual-Machine-I-O-Processing-Using-Designated-Turbo-Sliced-Core/">vTurbo: Accelerating Virtual Machine I/O Processing Using Designated Turbo-Sliced Core</a></p>
-<ul>
-<li>Authors: Cong Xu, Sahan Gamage, Hui Lu, Ramana Kompella, and Dongyan Xu, Purdue University</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/xu" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/">Hyper-Switch: A Scalable Software Virtual Switching Architecture</a></p>
-<ul>
-<li>Authors: Kaushik Kumar Ram, Alan L. Cox, Mehul Chadha, and Scott Rixner, Rice University</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/ram" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/09/Lightweight-Memory-Tracing/">Lightweight Memory Tracing</a></p>
-<ul>
-<li>Authors: Mathias Payer, Enrico Kravina, and Thomas R. Gross, ETH Zurich</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/payer" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/10/Improving-Server-Application-Performance-via-Pure-TCP-ACK-Receive-Optimization/">Improving Server Application Performance via Pure TCP ACK Receive Optimization</a></p>
-<ul>
-<li>Authors: Michael Chan and David R. Cheriton, Stanford University</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/chan" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Optimizing VM Checkpointing for Restore Performance in VMware ESXi</p>
-<ul>
-<li>Authors: Irene Zhang, University of Washington and VMware; Tyler Denniston, MIT CSAIL and VMware; Yury Baskakov,VMware; Alex Garthwaite, CloudPhysics and VMware</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/zhang" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>DeepDive: Transparently Identifying and Managing Performance Interference in Virtualized Environments</p>
-<ul>
-<li>Authors: Dejan Novaković, Nedeljko Vasić, and Stanko Novaković, École Polytechnique Fédérale de Lausanne (EPFL); Dejan Kostić, Institute IMDEA Networks; Ricardo Bianchini, Rutgers University</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/novakovi%C4%87" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Network Interface Design for Low Latency Request-Response Protocols</p>
-<ul>
-<li>Authors: Mario Flajslik and Mendel Rosenblum, Stanford University</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/flajslik" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>packetdrill: Scriptable Network Stack Testing, from Sockets to Packets</p>
-<ul>
-<li>Authors: Neal Cardwell, Yuchung Cheng, Lawrence Brakmo, Matt Mathis, Barath Raghavan, Nandita Dukkipati, Hsiao-keng Jerry Chu, Andreas Terzis, and Tom Herbert, Google</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/cardwell" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>When Slower Is Faster: On Heterogeneous Multicores for Reliable Systems</p>
-<ul>
-<li>Authors: Tomas Hruby, Herbert Bos, and Andrew S. Tanenbaum, VU University Amsterdam</li>
-<li>2013 USENIX ATC [<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/hruby" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2014_USENIX_ATC">2014 USENIX ATC</h2>
-<ol>
-<li><p><a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a></p>
-<ul>
-<li>Authors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, and Vlad Zolotarov, Cloudius Systems</li>
-<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a></p>
-<ul>
-<li>Authors: Ali José Mashtizadeh, Stanford University; Min Cai, Gabriel Tarasuk-Levin, and Ricardo Koller, VMware, Inc.; Tal Garfinkel; Sreekanth Setty, VMware, Inc.</li>
-<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/mashtizadeh" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>GPUvm: Why Not Virtualizing GPUs at the Hypervisor?</p>
-<ul>
-<li>Authors: Yusuke Suzuki, Keio University; Shinpei Kato, Nagoya University; Hiroshi Yamada, Tokyo University of Agriculture and Technology; Kenji Kono, Keio University</li>
-<li>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/suzuki" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Large Pages May Be Harmful on NUMA Systems</p>
-<ul>
-<li>Authors: Fabien Gaud, Simon Fraser University; Baptiste Lepers, CNRS; Jeremie Decouchant, Grenoble University; Justin Funston and Alexandra Fedorova, Simon Fraser University; Vivien Quéma, Grenoble INP</li>
-<li>2014 USENIX ATC [<a href="">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2014_USENIX_OSDI">2014 USENIX OSDI</h2>
-<ol>
-<li><p>Arrakis: The Operating System is the Control Plane</p>
-<ul>
-<li>Authors: Simon Peter, Jialin Li, Irene Zhang, Dan R. K. Ports, Doug Woos, Arvind Krishnamurthy, and Thomas Anderson, University of Washington; Timothy Roscoe, ETH Zürich</li>
-<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/peter" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>IX: A Protected Dataplane Operating System for High Throughput and Low Latency</p>
-<ul>
-<li>Authors: Adam Belay, Stanford University; George Prekas, École Polytechnique Fédérale de Lausanne (EPFL); Ana Klimovic, Samuel Grossman, and Christos Kozyrakis, Stanford University; Edouard Bugnion, École Polytechnique Fédérale de Lausanne (EPFL)</li>
-<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Shielding Applications from an Untrusted Cloud with Haven</p>
-<ul>
-<li>Authors: Andrew Baumann, Marcus Peinado, and Galen Hunt, Microsoft Research</li>
-<li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/baumann" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2014_USENIX_NSDI">2014 USENIX NSDI</h2>
-<ol>
-<li><p><a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP: a Highly Scalable User-level TCP Stack for Multicore Systems</a></p>
-<ul>
-<li>Authors: EunYoung Jeong, Shinae Woo, Muhammad Jamshed, and Haewon Jeong, Korea Advanced Institute of Science and Technology (KAIST); Sunghwan Ihm, Princeton University; Dongsu Han and KyoungSoo Park, Korea Advanced Institute of Science and Technology (KAIST)</li>
-<li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/jeong" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/08/ClickOS-and-the-Art-of-Network-Function-Virtualization/">ClickOS and the Art of Network Function Virtualization</a></p>
-<ul>
-<li>Authors: Joao Martins and Mohamed Ahmed, NEC Europe Ltd.; Costin Raiciu and Vladimir Olteanu, University Politehnica of Bucharest; Michio Honda, Roberto Bifulco, and Felipe Huici, NEC Europe Ltd.</li>
-<li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/martins" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/15/SENIC-Scalable-NIC-for-End-Host-Rate-Limiting/">SENIC: Scalable NIC for End-Host Rate Limiting</a></p>
-<ul>
-<li>Authors: Sivasankar Radhakrishnan, University of California, San Diego; Yilong Geng and Vimalkumar Jeyakumar, Stanford University; Abdul Kabbani, Google Inc.; George Porter, University of California, San Diego; Amin Vahdat, Google Inc. and University of California, San Diego</li>
-<li>2014 USENIX NSDI [<a href="https://www.usenix.org/conference/nsdi14/technical-sessions/presentation/radhakrishnan" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2011_ACM_SoCC">2011 ACM SoCC</h2>
-<ol>
-<li>Improving Per-Node Efficiency in the Datacenter with New OS Abstractions<ul>
-<li>Authors: Barret Rhoden, Kevin Klues, David Zhu, Eric Brewer, University of California, Berkeley</li>
-<li>2011 ACM SoCC</li>
-</ul>
-</li>
-</ol>
-<h2 id="2012_ACM_SoCC">2012 ACM SoCC</h2>
-<ol>
-<li>vBalance: Using Interrupt Load Balance to Improve I/O Performance for SMP Virtual Machines<ul>
-<li>Authors:     Luwei Cheng    and Cho-Li Wang, The University of Hong Kong</li>
-<li>2012 ACM SoCC</li>
-</ul>
-</li>
-</ol>
-<h2 id="2013_IEEE/ACM_ANCS">2013 IEEE/ACM ANCS</h2>
-<ol>
-<li><a href="/2014/12/07/Speeding-up-packet-I-O-in-virtual-machines/">Speeding up packet I/O in virtual machines</a><ul>
-<li>Authors: Luigi Rizzo, Giuseppe Lettieri, Vincenzo Maffione, Università di Pisa, Italy</li>
-<li>2013 IEEE/ACM ANCS [<a href="https://sites.google.com/a/ancsconf.org/2013/conference-program" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2013_ASPLOS">2013 ASPLOS</h2>
-<ol>
-<li><p>Unikernels: Library Operating Systems for the Cloud</p>
-<ul>
-<li>Authors: Anil Madhavapeddy (University of Cambridge), Richard Mortier (University of Nottingham), Charalampos Rotsos (University of Cambridge), David Scott (Citrix Systems R&amp;D), Balraj Singh (University of Cambridge), Thomas Gazagnaire (OcamlPro), Steven Smith (University of Cambridge), Steven Hand (University of Cambridge), Jon Crowcroft (University of Cambridge)</li>
-</ul>
-</li>
-<li><p>Fine-Grained Fault Tolerance using Device Checkpoints</p>
-<ul>
-<li>Authors: Asim Kadav (University of Wisconsin-Madison), Matthew J. Renzelmann (University of Wisconsin-Madison), Michael M. Swift (University of Wisconsin-Madison)</li>
-</ul>
-</li>
-</ol>
-<h2 id="2014_ACM_VEE">2014 ACM VEE</h2>
-<ol>
-<li><p><a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/">Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines</a></p>
-<ul>
-<li>Authors:  Julian Stecklina, TU Dresden</li>
-<li>2014 ACM VEE [<a href="http://vee2014.cs.technion.ac.il/program.html" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/28/Mortar-Filling-the-Gaps-in-Data-Center-Memory/">Mortar: Filling the Gaps in Data Center Memory</a></p>
-<ul>
-<li>Authors: Jinho Hwang (IBM T.J. Watson Research Center), Ahsen J. Uppal, Timothy Wood, H. Howie Huang (George Washington University)</li>
-<li>2014 ACM VEE [<a href="http://vee2014.cs.technion.ac.il/program.html" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2013_ACM_VEE">2013 ACM VEE</h2>
-<ol>
-<li><p>Using A Dual-VM Enabled External Shell for Guest-OS Introspection, Reconfiguration, and Recovery</p>
-<ul>
-<li>Authors: Yangchun Fu, Zhiqiang Lin (University of Texas at Dallas)</li>
-<li>2013 ACM VEE [<a href="https://labs.vmware.com/vee2013/program.html" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>A Lightweight VMM on Many core for High Performance Computing</p>
-<ul>
-<li>Authros: Yuehua Dai, Qi Yong, Jianbao Reng, Shi Yi, Xiaoguang Wang, Xuan Yu (Xi’an Jiaotong University)</li>
-<li>2013 ACM VEE [<a href="https://labs.vmware.com/vee2013/program.html" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Traveling Forward in Time to Newer Operating Systems using ShadowReboot</p>
-<ul>
-<li>Authors: Hiroshi Yamada (Tokyo University of Agriculture and Technology, JST CREST), Kenji Kono (Keio University)</li>
-<li>2013 ACM VEE [<a href="https://labs.vmware.com/vee2013/program.html" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Parallelizing Live Migration of Virtual Machines</p>
-<ul>
-<li>Authros: Xiang Song, jicheng Shi, Ran Liu, Jian Yang, Haibo Chen (Fudan University)</li>
-<li>2013 ACM VEE [<a href="https://labs.vmware.com/vee2013/program.html" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2013_ACM_HPDC">2013 ACM HPDC</h2>
-<ol>
-<li><p><a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/">Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects</a></p>
-<ul>
-<li>Authors: Zheng Cui, Patrick G. Bridges (University of New Mexico), John R. Lange (University of Pittsburgh), Peter A. Dinda (Northwestern University)</li>
-<li>2013 ACM HPDC [<a href="http://www.hpdc.org/2013/program/conference-program/" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p><a href="/2014/12/30/A-Comparative-Study-of-High-Performance-Computing-on-the-Cloud/">A Comparative Study of High-Performance Computing on the Cloud</a></p>
-<ul>
-<li>Authors: Aniruddha Marathe, Rachel Harris, David K. Lowenthal (University of Arizona), Bronis R. de Supinski, Barry Rountree, Martin Schulz (Lawrence Livermore National Laboratory), Xin Yuan (Florida State University)</li>
-<li>2013 ACM HPDC [<a href="http://www.hpdc.org/2013/program/conference-program/" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="2014_ACM_HPDC">2014 ACM HPDC</h2>
-<ol>
-<li><p>CMCP: A Novel Page Replacement Policy for System Level Hierarchical Memory Management on Many-cores</p>
-<ul>
-<li>Authors: Balazs Gerofi (The University Of Tokyo), Akio Shimada (RIKEN Advanced Institute for Computational Science), Atsushi Hori (RIKEN Advanced Institute for Computational Science), Takagi Masamichi (NEC Corporation), Yutaka Ishikawa (The University Of Tokyo)</li>
-<li>2014 ACM HPDC [<a href="http://www.hpdc.org/2014/program/conference-program/" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>TOP-PIM: Throughput-Oriented Programmable Processing in Memory</p>
-<ul>
-<li>Authors: Dong Ping Zhang (AMD Research), Nuwan Jayasena (AMD Research), Alexander Lyashevsky (AMD Research), Joseph Greathouse (AMD Research), Lifan Xu (University of Delaware), Mike Ignatowski (AMD Research)</li>
-<li>2014 ACM HPDC [<a href="http://www.hpdc.org/2014/program/conference-program/" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Improving energy efficiency of Embedded DRAM Caches for High-end Computing Systems</p>
-<ul>
-<li>Authors: Sparsh Mittal (Oak Ridge National Lab), Jeffrey S. Vetter (Oak Ridge National Lab), Dong Li (Oak Ridge National Lab)</li>
-<li>2014 ACM HPDC [<a href="http://www.hpdc.org/2014/program/conference-program/" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Communication-Driven Scheduling for Virtual Clusters in Cloud</p>
-<ul>
-<li>Authors: Haibao Chen (Huazhong University of Science and Technology), Song Wu (Huazhong University of Science and Technology), Zhenjiang Xie (Huazhong University of Science and Technology), Sheng Di (Argonne National Laboratory), Bingbing Zhou (The University of Sydney), Xuanhua Shi (Huazhong University of Science and Technology), Hai Jin (Huazhong University of Science and Technology)</li>
-<li>2014 ACM HPDC [<a href="http://www.hpdc.org/2014/program/conference-program/" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Squirrel: Scatter Hoarding VM Image Contents on IaaS Compute Nodes</p>
-<ul>
-<li>Authors: Kaveh Razavi (VU University Amsterdam), Ana Ion (VU University Amsterdam), Thilo Kielmann (VU University Amsterdam)</li>
-<li>2014 ACM HPDC [<a href="http://www.hpdc.org/2014/program/conference-program/" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-<li><p>Exploiting Redundancy for Cost-Effective, Time-Constrained Execution of HPC Applications on Amazon EC2</p>
-<ul>
-<li>Authors: Aniruddha Marathe (University of Arizona), Rachel Harris (University of Arizona), David K. Lowenthal (University of Arizona), Bronis R. de Supinski (Lawrence Livermore National Laboratory), Barry Rountree (Lawrence Livermore National Laboratory), Martin Schulz (Lawrence Livermore National Laboratory)</li>
-<li>2014 ACM HPDC [<a href="http://www.hpdc.org/2014/program/conference-program/" target="_blank" rel="external">URL</a>]</li>
-</ul>
-</li>
-</ol>
-<h2 id="VLDB">VLDB</h2>
-<ol>
-<li>RemusDB: Transparent High-Availability for Database Systems<ul>
-<li>Authors: Umar Farooq Minhas (University of Waterloo), Shriram Rajagopalan (University of British Columbia), Brendan Cully (University of British Columbia), Ashraf Aboulnaga (University of Waterloo), Ken Salem (University of Waterloo), Andrew Warfield (University of British Columbia)</li>
-<li>2011 VLDB</li>
-</ul>
-</li>
-</ol>
-<h2 id="ACM_TACO">ACM TACO</h2>
-<ol>
-<li>ReNIC: Architectural extension to SR-IOV I/O virtualization for efficient replication<ul>
-<li>Authors:     Yaozu Dong, Yu Chen, Zhenhao Pan, Jinquan Dai, Yunhong Jiang</li>
-<li>ACM TACO, Vol.8, No.4, January 2012</li>
-</ul>
-</li>
-</ol>
-<h2 id="CACM">CACM</h2>
-<ol>
-<li><p>Operating System Support for Database Management</p>
-<ul>
-<li>Authors: Michael Stonebraker, University of California, Berkeley</li>
-<li>Communication of the ACM, Vol.24, No.7, July 1981</li>
-</ul>
-</li>
-<li><p>The V Distributed System</p>
-<ul>
-<li>Authors: David R. Cheriton</li>
-<li>Communication of the ACM, Vol.31, No.3, March 1988</li>
-</ul>
-</li>
-</ol>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/11/30/TODO-list/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/11/30/hello-world/">Hello World</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-11-30T12:58:29.000Z">Nov 30 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/11/30/hello-world/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
     <a href="/" class="alignleft prev">Prev</a>
   
+  
+    <a href="/page/3/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -1145,23 +799,23 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
-        <a href="/2014/12/30/A-Comparative-Study-of-High-Performance-Computing-on-the-Cloud/">A Comparative Study of High-Performance Computing on the Cloud</a>
+        <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis: The Operating System is the Control Plane</a>
       </li>
     
       <li>
-        <a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/">Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects</a>
+        <a href="/2015/01/05/ASPLOS/">ASPLOS</a>
       </li>
     
       <li>
-        <a href="/2014/12/28/Mortar-Filling-the-Gaps-in-Data-Center-Memory/">Mortar: Filling the Gaps in Data Center Memory</a>
+        <a href="/2015/01/05/OSDI/">OSDI</a>
       </li>
     
       <li>
-        <a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/">Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines</a>
+        <a href="/2015/01/05/HPDC/">HPDC</a>
       </li>
     
       <li>
-        <a href="/2014/12/21/XvMotion-Unified-Virtual-Machine-Migration-over-Long-Distance/">XvMotion: Unified Virtual Machine Migration over Long Distance</a>
+        <a href="/2015/01/05/SoCC/">SoCC</a>
       </li>
     
   </ul>
@@ -1176,7 +830,9 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/HPC/">HPC<small>1</small></a>
   
-    <a href="/tags/kernel/">kernel<small>1</small></a>
+    <a href="/tags/conference/">conference<small>7</small></a>
+  
+    <a href="/tags/kernel/">kernel<small>2</small></a>
   
     <a href="/tags/list/">list<small>1</small></a>
   
@@ -1184,7 +840,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/networking/">networking<small>8</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>12</small></a>
+    <a href="/tags/virtualization/">virtualization<small>13</small></a>
   
 </div>
 
@@ -1195,7 +851,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <footer id="footer" class="inner"><div class="padding">
 	<div class="alignleft">
 	  
-	  &copy; 2014 Ryousei Takano
+	  &copy; 2015 Ryousei Takano
 	  
 	  Powerd by <a href="http://hexo.io/" target="_blank">hexo</a>
 	  and Theme by <a href="https://github.com/halfer53/metro-light" target="_blank">metro-light</a>
