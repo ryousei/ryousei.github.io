@@ -118,6 +118,69 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/">Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-29T05:50:10.000Z">Dec 29 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects<br>Authors: Zheng Cui, Patrick G. Bridges (University of New Mexico), John R. Lange (University of Pittsburgh), Peter A. Dinda (Northwestern University)<br>2013 ACM HPDC [<a href="http://www.hpdc.org/2013/program/conference-program/" target="_blank" rel="external">URL</a>]</p>
+<hr>
+<ul>
+<li>The authors present a virtual TCP offload Ethernet device, which enables the overlay system to leverage the semantics and performance characteristics of the underlying network to maximize overlay performance.</li>
+<li>The authors implemented this approach by enhancing the <em>VNET/P</em> virtual network overlay [HPDC2012] with offload device capabilities (VTOEs) and running it on top of a high-performance InfiniBand network fabric.</li>
+<li>To bridge the semantic gap, it uses minimal interconnect features, and translates the advanced features to a simple Ethernet interface while hiding them from the guest OS.</li>
+<li>VNET/P is an in-VMM, overlay-based layer-2 virtual networking system for the <em>Palacios</em> VMM [IPDPS2010].  Their previous work [<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6468468&amp;punumber%3D6468170%26sortType%3Dasc_p_Sequence%26filter%3DAND%28p_IS_Number%3A6468439%29%26pageNumber%3D2" target="_blank" rel="external">SC2012</a>] shows that this model provides near-native MPI performance on a high-performance underlying Ethernet network, by using optimistic interrupts and zero-copy cut-through data forwarding (<a href="http://www.slideshare.net/oraccha/optimizing-overlaybased-virtual-networking-through-optimistic-interrupts-and-cutthrough-forwarding" target="_blank" rel="external">Related slides</a>).  However, it is unable to deliver near-native network performance on InfiniBand due to the semantic gap between the virtual overlay and underlying networks.</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/28/Mortar-Filling-the-Gaps-in-Data-Center-Memory/">Mortar: Filling the Gaps in Data Center Memory</a></h1>
     
   
@@ -709,75 +772,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
   
-    <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/07/Speeding-up-packet-I-O-in-virtual-machines/">Speeding up packet I/O in virtual machines</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-07T02:43:12.000Z">Dec 7 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: Speeding up packet I/O in virtual machines<br>Authors: Luigi Rizzo, Giuseppe Lettieri, Vincenzo Maffione, Università di Pisa, Italy<br>2013 IEEE/ACM ANCS [<a href="https://sites.google.com/a/ancsconf.org/2013/conference-program" target="_blank" rel="external">URL</a>]<br>Reference:</p>
-<ul>
-<li><a href="http://info.iet.unipi.it/~luigi/netmap/" target="_blank" rel="external">The netmap project</a> (Università di Pisa)</li>
-</ul>
-<hr>
-<ul>
-<li>The authors applies netmap and other techniques to QEMU achieving 5 Mpps with <em><a href="https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/rizzo" target="_blank" rel="external">netmap</a></em> [USENIX2012], 1 Mpps with sockets between VMs over an emulated e1000.<ul>
-<li>interrupt moderation</li>
-<li>send combination [USENIX2002]: a driver-based form of batching and interrupt moderation</li>
-</ul>
-</li>
-<li>They focus on high packet rates instead of high throughput on virtualized networks.  That enables a new set of applications, including software routers, middlebox, SDN, and so on, within virtual machines.</li>
-<li>They also use <em>VALE</em> [CoNEXT2012] as a virtual switch.</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/07/Speeding-up-packet-I-O-in-virtual-machines/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-  
 
   <nav id="pagination">
   
@@ -808,6 +802,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis: The Operating System is the Control Plane</a>
       </li>
     
@@ -821,10 +819,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2015/01/05/HPDC/">HPDC</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/05/SoCC/">SoCC</a>
       </li>
     
   </ul>
@@ -841,7 +835,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/conference/">conference<small>7</small></a>
   
-    <a href="/tags/kernel/">kernel<small>2</small></a>
+    <a href="/tags/kernel/">kernel<small>3</small></a>
   
     <a href="/tags/list/">list<small>1</small></a>
   
@@ -849,7 +843,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/networking/">networking<small>8</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>13</small></a>
+    <a href="/tags/virtualization/">virtualization<small>14</small></a>
   
 </div>
 

@@ -118,6 +118,79 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/">OSv - Optimizing the Operating System for Virtual Machines</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2014-12-04T06:03:15.000Z">Dec 4 2014</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: OSv - Optimizing the Operating System for Virtual Machines<br>Authors: Avi Kivity, Dor Laor, Glauber Costa, Pekka Enberg, Nadav Har’El, Don Marti, and Vlad Zolotarov, Cloudius Systems<br>2014 USENIX ATC [<a href="https://www.usenix.org/conference/atc14/technical-sessions/presentation/kivity" target="_blank" rel="external">URL</a>]<br>Reference:</p>
+<ul>
+<li><a href="http://osv.io/" target="_blank" rel="external">OSv - the operating system designed for the cloud</a></li>
+</ul>
+<hr>
+<ul>
+<li>The authors present OSv, a new guest operating system designed specifically for running a single application on a virtual machine in the cloud.  The first author is famous as the father of the KVM hypervisor and a founder at Cloudius Systems.</li>
+<li>OSv follows the library OS design, proposed by <em>exokernel</em> in 1990s.  In OSv case, a hyperviosr replaces the role of exokernel.</li>
+<li>OSv has been developed from scratch.  The code is written in C++11.<ul>
+<li>Single address space: all application thread and kernel use the same page tables.</li>
+<li>No spinlocks.</li>
+<li>Thread scheduler: lock-free, preemptive, tick-less, fair, scalable, and efficient</li>
+<li>Network channels: employ Van Jacobson’s net channel idea to reduce contentions between an application thread context and an interrupt context.</li>
+<li>Beyond Linux API: shrinker, JVM balloon</li>
+</ul>
+</li>
+<li>It originally supports only Java applications, and now applications written in Lua, Ruby, and so on, run on OSv.  Some guest OSs focus on running only a single high-level language. For example, Erlang on Xen, Mirage OS (OCaml) [ASPLOS2013], and Libra (J9 JVM).</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2014/12/04/OSv-Optimizing-the-Operating-System-for-Virtual-Machines/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2014/12/03/Hyper-Switch-A-Scalable-Software-Virtual-Switching-Architecture/">Hyper-Switch: A Scalable Software Virtual Switching Architecture</a></h1>
     
   
@@ -343,6 +416,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis: The Operating System is the Control Plane</a>
       </li>
     
@@ -356,10 +433,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2015/01/05/HPDC/">HPDC</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/05/SoCC/">SoCC</a>
       </li>
     
   </ul>
@@ -376,7 +449,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/conference/">conference<small>7</small></a>
   
-    <a href="/tags/kernel/">kernel<small>2</small></a>
+    <a href="/tags/kernel/">kernel<small>3</small></a>
   
     <a href="/tags/list/">list<small>1</small></a>
   
@@ -384,7 +457,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/networking/">networking<small>8</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>13</small></a>
+    <a href="/tags/virtualization/">virtualization<small>14</small></a>
   
 </div>
 

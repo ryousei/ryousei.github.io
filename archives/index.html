@@ -118,6 +118,69 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2015-01-14T23:00:17.000Z">Jan 15 2015</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: IX: A Protected Dataplane Operating System for High Throughput and Low Latency<br>Authors: Adam Belay, Stanford University; George Prekas, École Polytechnique Fédérale de Lausanne (EPFL); Ana Klimovic, Samuel Grossman, and Christos Kozyrakis, Stanford University; Edouard Bugnion, École Polytechnique Fédérale de Lausanne (EPFL)<br>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>] (<strong>Best paper award</strong>)</p>
+<hr>
+<ul>
+<li>The authors present IX, a data plane library operating system, that provides high throughput and low latency, while maintaining strong protection offered by existing kernels.</li>
+<li>IX and <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis</a> [OSDI2014] propose a similar idea for a design of high performance operating systems.  The both OSs use hardware virtualization to separate the data plane (network processing) from the control plane (kernel).  Unlike Arrakis, IX uses a full Linux kernel as the control plane.</li>
+<li>The authors use the Dune module (their previous work) [OSDI2012] within Linux to enable data planes to run as application-specific OSs in VMX non-root ring 0.  The IX data plane mainly consists of the Intel NIC device driver (derived from DPDK), lwIP TCP/IP stack, and the IX kernel (based on Dune).  It provides a native, zero-copy API that explicitly exposes flow control to applications.</li>
+<li>IX outperforms Linux and <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP</a> [NSDI2014].</li>
+</ul>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis: The Operating System is the Control Plane</a></h1>
     
   
@@ -285,7 +348,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/peter" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
-<li><p>IX: A Protected Dataplane Operating System for High Throughput and Low Latency</p>
+<li><p><a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a></p>
 <ul>
 <li>Authors: Adam Belay, Stanford University; George Prekas, École Polytechnique Fédérale de Lausanne (EPFL); Ana Klimovic, Samuel Grossman, and Christos Kozyrakis, Stanford University; Edouard Bugnion, École Polytechnique Fédérale de Lausanne (EPFL)</li>
 <li>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>]</li>
@@ -917,69 +980,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
   
-    <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/">Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-29T05:50:10.000Z">Dec 29 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects<br>Authors: Zheng Cui, Patrick G. Bridges (University of New Mexico), John R. Lange (University of Pittsburgh), Peter A. Dinda (Northwestern University)<br>2013 ACM HPDC [<a href="http://www.hpdc.org/2013/program/conference-program/" target="_blank" rel="external">URL</a>]</p>
-<hr>
-<ul>
-<li>The authors present a virtual TCP offload Ethernet device, which enables the overlay system to leverage the semantics and performance characteristics of the underlying network to maximize overlay performance.</li>
-<li>The authors implemented this approach by enhancing the <em>VNET/P</em> virtual network overlay [HPDC2012] with offload device capabilities (VTOEs) and running it on top of a high-performance InfiniBand network fabric.</li>
-<li>To bridge the semantic gap, it uses minimal interconnect features, and translates the advanced features to a simple Ethernet interface while hiding them from the guest OS.</li>
-<li>VNET/P is an in-VMM, overlay-based layer-2 virtual networking system for the <em>Palacios</em> VMM [IPDPS2010].  Their previous work [<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6468468&amp;punumber%3D6468170%26sortType%3Dasc_p_Sequence%26filter%3DAND%28p_IS_Number%3A6468439%29%26pageNumber%3D2" target="_blank" rel="external">SC2012</a>] shows that this model provides near-native MPI performance on a high-performance underlying Ethernet network, by using optimistic interrupts and zero-copy cut-through data forwarding (<a href="http://www.slideshare.net/oraccha/optimizing-overlaybased-virtual-networking-through-optimistic-interrupts-and-cutthrough-forwarding" target="_blank" rel="external">Related slides</a>).  However, it is unable to deliver near-native network performance on InfiniBand due to the semantic gap between the virtual overlay and underlying networks.</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-  
 
   <nav id="pagination">
   
@@ -1008,6 +1008,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis: The Operating System is the Control Plane</a>
       </li>
     
@@ -1021,10 +1025,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2015/01/05/HPDC/">HPDC</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/05/SoCC/">SoCC</a>
       </li>
     
   </ul>
@@ -1041,7 +1041,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/conference/">conference<small>7</small></a>
   
-    <a href="/tags/kernel/">kernel<small>2</small></a>
+    <a href="/tags/kernel/">kernel<small>3</small></a>
   
     <a href="/tags/list/">list<small>1</small></a>
   
@@ -1049,7 +1049,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/networking/">networking<small>8</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>13</small></a>
+    <a href="/tags/virtualization/">virtualization<small>14</small></a>
   
 </div>
 

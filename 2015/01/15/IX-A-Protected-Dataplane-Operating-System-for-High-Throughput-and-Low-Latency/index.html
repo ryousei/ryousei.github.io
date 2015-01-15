@@ -5,15 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mortar: Filling the Gaps in Data Center Memory | My Reading List</title>
+  <title>IX: A Protected Dataplane Operating System for High Throughput and Low Latency | My Reading List</title>
   <meta name="author" content="Ryousei Takano">
   
-  <meta name="description" content="Title: Mortar: Filling the Gaps in Data Center MemoryAuthors: Jinho Hwang (IBM T.J. Watson Research Center), Ahsen J. Uppal, Timothy Wood, H. Howie Hu">
+  <meta name="description" content="Title: IX: A Protected Dataplane Operating System for High Throughput and Low LatencyAuthors: Adam Belay, Stanford University; George Prekas, École Po">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Mortar: Filling the Gaps in Data Center Memory"/>
+  <meta property="og:title" content="IX: A Protected Dataplane Operating System for High Throughput and Low Latency"/>
   <meta property="og:site_name" content="My Reading List"/>
 
   
@@ -99,11 +99,11 @@ body{ -webkit-animation: bugfix infinite 1s; }
   	<div class="inner">
       <div class="padding">
     		
-          <h1>Mortar: Filling the Gaps in Data Center Memory</h1>
+          <h1>IX: A Protected Dataplane Operating System for High Throughput and Low Latency</h1>
           <ul>
             <li>
               <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-28T00:38:54.000Z">Dec 28 2014</time>
+              <time datetime="2015-01-14T23:00:17.000Z">Jan 15 2015</time>
             </li>
             
               <li>
@@ -133,13 +133,13 @@ body{ -webkit-animation: bugfix infinite 1s; }
       
       <div class="entry">
         
-          <p>Title: Mortar: Filling the Gaps in Data Center Memory<br>Authors: Jinho Hwang (IBM T.J. Watson Research Center), Ahsen J. Uppal, Timothy Wood, H. Howie Huang (George Washington University)<br>2014 ACM VEE [<a href="http://vee2014.cs.technion.ac.il/program.html" target="_blank" rel="external">URL</a>]</p>
+          <p>Title: IX: A Protected Dataplane Operating System for High Throughput and Low Latency<br>Authors: Adam Belay, Stanford University; George Prekas, École Polytechnique Fédérale de Lausanne (EPFL); Ana Klimovic, Samuel Grossman, and Christos Kozyrakis, Stanford University; Edouard Bugnion, École Polytechnique Fédérale de Lausanne (EPFL)<br>2014 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>] (<strong>Best paper award</strong>)</p>
 <hr>
 <ul>
-<li>The authors present <em>Mortar</em>, a hypervisor managed cache system for repurposing spare system memory over data center resources.</li>
-<li>Data center servers are typically overprovisioned to handle unpredictable workload bursts, average 30% of memory is idle from GWU commercial data center.  And also application-level distributed cache, e.g., memcached, is heavily used in data centers.</li>
-<li>A hypervisor maintains a list of spare memory that can be allocated to VMs on demand.  Mortar provides a new Linux system call and a Xen hypercall which together provide the interface to a key-value store.</li>
-<li>The source code is available from <a href="https://github.com/gwcloudlab/mortar" target="_blank" rel="external">here</a>.</li>
+<li>The authors present IX, a data plane library operating system, that provides high throughput and low latency, while maintaining strong protection offered by existing kernels.</li>
+<li>IX and <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis</a> [OSDI2014] propose a similar idea for a design of high performance operating systems.  The both OSs use hardware virtualization to separate the data plane (network processing) from the control plane (kernel).  Unlike Arrakis, IX uses a full Linux kernel as the control plane.</li>
+<li>The authors use the Dune module (their previous work) [OSDI2012] within Linux to enable data planes to run as application-specific OSs in VMX non-root ring 0.  The IX data plane mainly consists of the Intel NIC device driver (derived from DPDK), lwIP TCP/IP stack, and the IX kernel (based on Dune).  It provides a native, zero-copy API that explicitly exposes flow control to applications.</li>
+<li>IX outperforms Linux and <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP</a> [NSDI2014].</li>
 </ul>
 
         
@@ -150,7 +150,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
   
   <div class="tags">
-    <a href="/tags/memory/">memory</a>, <a href="/tags/virtualization/">virtualization</a>
+    <a href="/tags/kernel/">kernel</a>, <a href="/tags/virtualization/">virtualization</a>
   </div>
 
           <div class="share">
@@ -181,18 +181,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
- <div class="article-prev" >
- <a href="/2014/12/29/Virtual-TCP-Offload-Optimizing-Ethernet-Overlay-Performance-on-Advanced-Interconnects/" title="Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects">
-  <i class="fa fa-long-arrow-left"></i>
-  <span>
-  Virtual TCP Offload: Optimizing Ethernet Overlay Performance on Advanced Interconnects</span>
-</a>
-</div>
-
 
 <div class="article-next">
-<a href="/2014/12/27/Shrinking-the-Hypervisor-One-Subsystem-at-a-Time-a-Userspace-Packet-Switch-for-Virtual-Machines/"  title="Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines">
- <span>Shrinking the Hypervisor One Subsystem at a Time: a Userspace Packet Switch for Virtual Machines
+<a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/"  title="Arrakis: The Operating System is the Control Plane">
+ <span>Arrakis: The Operating System is the Control Plane
 </span>
 <i class="fa fa-long-arrow-right"></i>
 </a>
