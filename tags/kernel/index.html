@@ -118,6 +118,63 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2015/01/16/Dune-Safe-User-level-Access-to-Privileged-CPU-Features/">Dune: Safe User-level Access to Privileged CPU Features</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2015-01-15T23:44:25.000Z">Jan 16 2015</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Dune: Safe User-level Access to Privileged CPU Features<br>Authors: Adam Belay, Andrea Bittau, Ali Mashtizadeh, David Terei, David Mazières, and Christos Kozyrakis, Stanford University<br>2012 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi12/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>]</p>
+<hr>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2015/01/16/Dune-Safe-User-level-Access-to-Privileged-CPU-Features/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a></h1>
     
   
@@ -149,7 +206,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <hr>
 <ul>
 <li>The authors present IX, a data plane library operating system, that provides high throughput and low latency, while maintaining strong protection offered by existing kernels.</li>
-<li>IX and <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis</a> [OSDI2014] propose a similar idea for a design of high performance operating systems.  The both OSs use hardware virtualization to separate the data plane (network processing) from the control plane (kernel).  Unlike Arrakis, IX uses a full Linux kernel as the control plane.</li>
+<li>IX and <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis</a> [OSDI2014] propose a similar idea for the design of high performance operating systems.  The both OSs use hardware virtualization to separate the data plane (network processing) from the control plane (kernel).  Unlike Arrakis, IX uses a full Linux kernel as the control plane.</li>
 <li>The authors use the Dune module (their previous work) [OSDI2012] within Linux to enable data planes to run as application-specific OSs in VMX non-root ring 0.  The IX data plane mainly consists of the Intel NIC device driver (derived from DPDK), lwIP TCP/IP stack, and the IX kernel (based on Dune).  It provides a native, zero-copy API that explicitly exposes flow control to applications.</li>
 <li>IX outperforms Linux and <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP</a> [NSDI2014].</li>
 </ul>
@@ -334,6 +391,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2015/01/16/Dune-Safe-User-level-Access-to-Privileged-CPU-Features/">Dune: Safe User-level Access to Privileged CPU Features</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a>
       </li>
     
@@ -347,10 +408,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2015/01/05/OSDI/">OSDI</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/05/HPDC/">HPDC</a>
       </li>
     
   </ul>
@@ -367,7 +424,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/conference/">conference<small>7</small></a>
   
-    <a href="/tags/kernel/">kernel<small>3</small></a>
+    <a href="/tags/kernel/">kernel<small>4</small></a>
   
     <a href="/tags/list/">list<small>1</small></a>
   
@@ -375,7 +432,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/networking/">networking<small>8</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>14</small></a>
+    <a href="/tags/virtualization/">virtualization<small>15</small></a>
   
 </div>
 

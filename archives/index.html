@@ -118,6 +118,63 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <div class="icon"></div>
             
     
+      <h1 class="title transition"><a href="/2015/01/16/Dune-Safe-User-level-Access-to-Privileged-CPU-Features/">Dune: Safe User-level Access to Privileged CPU Features</a></h1>
+    
+  
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2015-01-15T23:44:25.000Z">Jan 16 2015</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Ryousei Takano</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+          </ul>
+        </header>
+      
+      <div class="entry">
+        
+          
+            <p>Title: Dune: Safe User-level Access to Privileged CPU Features<br>Authors: Adam Belay, Andrea Bittau, Ali Mashtizadeh, David Terei, David Mazières, and Christos Kozyrakis, Stanford University<br>2012 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi12/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>]</p>
+<hr>
+
+          
+        
+      </div>
+      <footer>
+        
+          <div class="alignright">
+            <a href="/2015/01/16/Dune-Safe-User-level-Access-to-Privileged-CPU-Features/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
+          </div>
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  
+    <div class="post-content-index">
+  
+      
+        <header>
+          <div class="icon"></div>
+            
+    
       <h1 class="title transition"><a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a></h1>
     
   
@@ -149,7 +206,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <hr>
 <ul>
 <li>The authors present IX, a data plane library operating system, that provides high throughput and low latency, while maintaining strong protection offered by existing kernels.</li>
-<li>IX and <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis</a> [OSDI2014] propose a similar idea for a design of high performance operating systems.  The both OSs use hardware virtualization to separate the data plane (network processing) from the control plane (kernel).  Unlike Arrakis, IX uses a full Linux kernel as the control plane.</li>
+<li>IX and <a href="/2015/01/14/Arrakis-The-Operating-System-is-the-Control-Plane/">Arrakis</a> [OSDI2014] propose a similar idea for the design of high performance operating systems.  The both OSs use hardware virtualization to separate the data plane (network processing) from the control plane (kernel).  Unlike Arrakis, IX uses a full Linux kernel as the control plane.</li>
 <li>The authors use the Dune module (their previous work) [OSDI2012] within Linux to enable data planes to run as application-specific OSs in VMX non-root ring 0.  The IX data plane mainly consists of the Intel NIC device driver (derived from DPDK), lwIP TCP/IP stack, and the IX kernel (based on Dune).  It provides a native, zero-copy API that explicitly exposes flow control to applications.</li>
 <li>IX outperforms Linux and <a href="/2014/12/05/mTCP-a-Highly-Scalable-User-level-TCP-Stack-for-Multicore-Systems/">mTCP</a> [NSDI2014].</li>
 </ul>
@@ -363,14 +420,14 @@ body{ -webkit-animation: bugfix infinite 1s; }
 </ol>
 <h2 id="2012_USENIX_OSDI">2012 USENIX OSDI</h2>
 <ol>
-<li>Dune: Safe User-level Access to Privileged CPU Features<ul>
+<li><p><a href="/2015/01/16/Dune-Safe-User-level-Access-to-Privileged-CPU-Features/">Dune: Safe User-level Access to Privileged CPU Features</a></p>
+<ul>
 <li>Authors: Adam Belay, Andrea Bittau, Ali Mashtizadeh, David Terei, David Mazières, and Christos Kozyrakis, Stanford University</li>
 <li>2012 USENIX OSDI [<a href="https://www.usenix.org/conference/osdi12/technical-sessions/presentation/belay" target="_blank" rel="external">URL</a>]</li>
 </ul>
 </li>
-</ol>
-<ol>
-<li>MegaPipe: A New Programming Interface for Scalable Network I/O<ul>
+<li><p>MegaPipe: A New Programming Interface for Scalable Network I/O</p>
+<ul>
 <li>Sangjin Han and Scott Marshall, University of California, Berkeley; Byung-Gon Chun, Yahoo! Research; Sylvia Ratnasamy, University of California, Berkeley</li>
 <li>2012 USENIX OSDI [<a href="">URL</a>]</li>
 </ul>
@@ -919,67 +976,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
   
-    <article class="post">
-  
-  
-    <div class="post-content-index">
-  
-      
-        <header>
-          <div class="icon"></div>
-            
-    
-      <h1 class="title transition"><a href="/2014/12/30/A-Comparative-Study-of-High-Performance-Computing-on-the-Cloud/">A Comparative Study of High-Performance Computing on the Cloud</a></h1>
-    
-  
-          <ul>
-            <li>
-              <span class="heading-span">Posted on: </span>
-              <time datetime="2014-12-30T02:40:49.000Z">Dec 30 2014</time>
-            </li>
-            
-              <li>
-                <span class="heading-span">By: </span>
-
-                
-                  <a href="/">Ryousei Takano</a>
-                
-
-              </li>
-            
-            <li>
-              <span class="heading-span">With: </span>
-              
-          </ul>
-        </header>
-      
-      <div class="entry">
-        
-          
-            <p>Title: A Comparative Study of High-Performance Computing on the Cloud<br>Authors: Aniruddha Marathe, Rachel Harris, David K. Lowenthal (University of Arizona), Bronis R. de Supinski, Barry Rountree, Martin Schulz (Lawrence Livermore National Laboratory), Xin Yuan (Florida State University)<br>2013 ACM HPDC [<a href="http://www.hpdc.org/2013/program/conference-program/" target="_blank" rel="external">URL</a>]</p>
-<hr>
-<ul>
-<li>The authors believe the difference between dedicated HPC clusters and Cloud platforms is smaller than perceived and the total turnaround time and cost are better determining factors than a program’s start and finish times.</li>
-<li>There are a lot of performance comparisons between HPC clusters and Amazon EC2 from a provider perspective.  From a user perspective, in contrast, this work shows multiple considerations in choosing a cluster, including the expected queue wait time along with the actual cost.  When measured in total turnaround time, the cloud can outperform dedicated HPC hardware in many cases due to significant queue wait time on HPC clusters.</li>
-</ul>
-
-          
-        
-      </div>
-      <footer>
-        
-          <div class="alignright">
-            <a href="/2014/12/30/A-Comparative-Study-of-High-Performance-Computing-on-the-Cloud/#more" class="more-link">Continue Reading<i class="fa fa-long-arrow-right fa-1"></i></a>
-          </div>
-        
-        <div class="clearfix"></div>
-      </footer>
-    </div>
-</article>
-
-
-
-  
 
   <nav id="pagination">
   
@@ -1008,6 +1004,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2015/01/16/Dune-Safe-User-level-Access-to-Privileged-CPU-Features/">Dune: Safe User-level Access to Privileged CPU Features</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/15/IX-A-Protected-Dataplane-Operating-System-for-High-Throughput-and-Low-Latency/">IX: A Protected Dataplane Operating System for High Throughput and Low Latency</a>
       </li>
     
@@ -1021,10 +1021,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2015/01/05/OSDI/">OSDI</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/05/HPDC/">HPDC</a>
       </li>
     
   </ul>
@@ -1041,7 +1037,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/conference/">conference<small>7</small></a>
   
-    <a href="/tags/kernel/">kernel<small>3</small></a>
+    <a href="/tags/kernel/">kernel<small>4</small></a>
   
     <a href="/tags/list/">list<small>1</small></a>
   
@@ -1049,7 +1045,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/networking/">networking<small>8</small></a>
   
-    <a href="/tags/virtualization/">virtualization<small>14</small></a>
+    <a href="/tags/virtualization/">virtualization<small>15</small></a>
   
 </div>
 
